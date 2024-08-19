@@ -1,0 +1,156 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "first": "Dangelo",
+      "last": "Leuschke",
+      "email": "magentawolf14@gmail.com",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
+      "created": "October 3, 2016",
+      "initial_balance": "613404"
+    },
+    {
+      "id": 2,
+      "first": "Herminia",
+      "last": "Orn",
+      "email": "Herminia.Orn@johnnie.info",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
+      "created": "October 3, 2016",
+      "initial_balance": "913893"
+    },
+    {
+      "id": 3,
+      "first": "Johnnie",
+      "last": "Block",
+      "email": "Johnnie.Block@luther.net",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
+      "created": "March 21, 2021",
+      "initial_balance": "576597"
+    },
+    {
+      "id": 4,
+      "first": "Romaine",
+      "last": "Crist",
+      "email": "Romaine.Crist@paige.net",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
+      "created": "June 9, 2015",
+      "initial_balance": "111166"
+    },
+    {
+      "id": 5,
+      "first": "Demario",
+      "last": "Purdy",
+      "email": "Demario.Purdy@christiana.biz",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
+      "created": "April 20, 2017",
+      "initial_balance": "58862"
+    },
+    {
+      "id": 6,
+      "first": "Elouise",
+      "last": "Homenick",
+      "email": "yellowturtle93@gmail.com",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
+      "created": "April 28, 2016",
+      "initial_balance": "765564"
+    },
+    {
+      "id": 7,
+      "first": "Ofelia",
+      "last": "Eichmann",
+      "email": "Ofelia.Eichmann@colt.biz",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
+      "created": "December 1, 2015",
+      "initial_balance": "868512"
+    },
+    {
+      "id": 8,
+      "first": "Ned",
+      "last": "Thiel",
+      "email": "Ned.Thiel@alexzander.info",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
+      "created": "July 2, 2016",
+      "initial_balance": "218587"
+    },
+    {
+      "id": 9,
+      "first": "Cheyanne",
+      "last": "Ortiz",
+      "email": "Cheyanne.Ortiz@anibal.net",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
+      "created": "October 29, 2016",
+      "initial_balance": "560875"
+    },
+    {
+      "id": 10,
+      "first": "Brady",
+      "last": "Boehm",
+      "email": "Brady.Boehm@bernie.net",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
+      "created": "June 15, 2021",
+      "initial_balance": "876073"
+    },
+    {
+      "id": 11,
+      "first": "Ellis",
+      "last": "Heidenreich",
+      "email": "salmonturtle02@gmail.com",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
+      "created": "July 12, 2019",
+      "initial_balance": "812297"
+    },
+    {
+      "id": 12,
+      "first": "Frieda",
+      "last": "Schultz",
+      "email": "Frieda.Schultz@germaine.info",
+      "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
+      "created": "April 11, 2023",
+      "initial_balance": "462279"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "fromUserId": 1,
+      "toUserId": 2,
+      "amount": 15000,
+      "date": "2024-06-01T12:30:00Z"
+    },
+    {
+      "id": 2,
+      "fromUserId": 4,
+      "toUserId": 12,
+      "amount": 1500,
+      "date": "2024-06-04T11:54:00Z"
+    },
+    {
+      "id": 3,
+      "fromUserId": 2,
+      "toUserId": 1,
+      "amount": 7000,
+      "date": "2024-06-22T08:27:00Z"
+    },
+    {
+      "id": 4,
+      "fromUserId": 8,
+      "toUserId": 6,
+      "amount": 27000,
+      "date": "2024-07-06T14:03:26:00Z"
+    },
+    {
+      "id": 5,
+      "fromUserId": 12,
+      "toUserId": 6,
+      "amount": 4000,
+      "date": "2024-06-25T20:35:18:00Z"
+    },
+    {
+      "id": 6,
+      "fromUserId": 11,
+      "toUserId": 2,
+      "amount": 41000,
+      "date": "2024-06-25T20:35:18:00Z"
+    }
+  ]
+}
