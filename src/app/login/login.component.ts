@@ -1,7 +1,8 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ENVIRONNEMENT } from '@environments/environment';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { PASSWORD } from '@app/core/constants/apps';
+import { AuthService } from '@app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,28 +10,50 @@ import { PASSWORD } from '@app/core/constants/apps';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  @ViewChild('email') emailInput!: ElementRef;
-  @ViewChild('password') passwordInput!: ElementRef;
+  signInForm!: FormGroup;
+  errorMessage!: string;
 
   readonly userPassword = PASSWORD;
 
-  constructor(private http: HttpClient) {}
-  signIn() {
-    // Code pour se connecter et rediriger vers la page correspondant au composant UserComponent.
-    const loginURL = ENVIRONNEMENT.baseUrl + ENVIRONNEMENT.urls.login;
-    alert('Clic sur le bouton de connexion');
+  constructor(
+    private formBuilder: FormBuilder,
+    private service: AuthService,
+    private router: Router,
+  ) {}
 
-    this.http
-      .post(loginURL, {
-        email: this.emailInput.nativeElement.value,
-        password: this.passwordInput.nativeElement.value,
+  ngOnInit(): void {
+    this.initForm();
+  }
+
+  initForm() {
+    this.signInForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: [
+        '',
+        [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)],
+      ],
+    });
+  }
+
+  signIn() {
+    const email = this.signInForm.get('email')?.value;
+    const password = this.signInForm.get('password')?.value;
+    this.service
+      .Login({
+        email,
+        password,
       })
-      .subscribe((returnValue) => {
-        console.log(returnValue);
-      });
+      .then(
+        () => {
+          this.router.navigate(['/user']);
+        },
+        (error) => {
+          this.errorMessage = error;
+        },
+      );
   }
 
   register() {
-    // Code pour créer un nouvel utilisateur
+    this.router.navigate(['/login']);
   }
 }

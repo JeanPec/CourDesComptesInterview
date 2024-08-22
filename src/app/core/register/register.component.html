@@ -1,0 +1,26 @@
+<div class="main text-center">
+    <form class="form-register" [formGroup]="registerForm" (ngSubmit)="register()">
+      <h1 class="h3 mb-5 font-weight-normal">Création d'un compte</h1>
+      <p class="mb-3">
+        Le mot de passe pour les utilisateurs déjà existants en base est "<em>{{
+          userPassword
+        }}</em
+        >"
+      </p>
+        <label for="email" class="visually-hidden">Email</label>
+        <input type="email" id="email" class="form-control" formControlName="email" placeholder="Email">
+        <label for="password" class="visually-hidden">Mot de Passe</label>
+        <input type="password" id="password" class="form-control" formControlName="password" placeholder="Mot de Passe">
+        <label for="confirmPassword" class="visually-hidden">Confirmez Mot de Passe</label>
+        <input type="password" id="confirmPassword" class="form-control" formControlName="confirmPassword" placeholder="Confirmez Mot de Passe">
+        <label for="firstName" class="visually-hidden">Prénom</label>
+        <input type="text" id="firstName" class="form-control" formControlName="firstName" placeholder="Prénom">
+        <label for="lastname" class="visually-hidden">Nom de Famille</label>
+        <input type="text" id="lastname" class="form-control" formControlName="lastName" placeholder="Nom de Famille">
+        <label for="age" class="visually-hidden">Age</label>
+        <input type="number" id="age" class="form-control" formControlName="age" placeholder="Age">
+        <a class="btn btn-secondary btn-lg me-3" routerLink="/login">Se connecter</a>
+        <button class="btn btn-primary btn-lg " type="submit" [disabled]="registerForm.invalid">Créer un compte</button>
+        <p class="text-danger mt-3">{{ errorMessage }}</p>
+    </form>
+</div>

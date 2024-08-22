@@ -1,0 +1,36 @@
+# Node modules
+node_modules
+
+# Dist folder
+dist
+
+# Build artifacts
+build
+
+# Cache folders
+tmp
+cache
+
+# Logs
+logs
+
+# Test reports
+coverage
+reports
+
+# Editor-specific
+.idea
+.vscode
+
+# OS-generated
+.DS_Store
+Thumbs.db
+
+# Package managers
+.npm
+.yarn
+yarn-error.log
+
+# Other
+*.log
+*.tsbuildinfo
