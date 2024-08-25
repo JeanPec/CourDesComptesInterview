@@ -25,7 +25,6 @@
     "@angular/platform-browser-dynamic": "^16.2.12",
     "@angular/router": "^16.2.12",
     "@edugouvfr/ngx-dsfr": "^1.11.6",
-    "bootstrap": "^5.3.3",
     "concurrently": "^8.2.2",
     "immutable": "^4.3.4",
     "json-server": "^0.17.4",

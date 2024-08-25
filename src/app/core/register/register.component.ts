@@ -70,4 +70,8 @@ export class RegisterComponent {
         },
       );
   }
+
+  navigateSignIn() {
+    this.router.navigate(['/register']);
+  }
 }

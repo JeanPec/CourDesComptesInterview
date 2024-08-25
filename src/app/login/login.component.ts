@@ -4,11 +4,12 @@ import { Router } from '@angular/router';
 import { PASSWORD } from '@app/core/constants/apps';
 import { AlertService } from '@app/services/alert.service';
 import { AuthService } from '@app/services/auth.service';
+import { DsfrLoginComponent } from '@edugouvfr/ngx-dsfr/lib/pages/login';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
   signInForm!: FormGroup;
@@ -37,6 +38,7 @@ export class LoginComponent {
   }
 
   signIn() {
+    console.log(event)
     const email = this.signInForm.get('email')?.value;
     const password = this.signInForm.get('password')?.value;
     this.service
@@ -52,5 +54,9 @@ export class LoginComponent {
           this.alertService.showAlert('Error', error, 'error');
         },
       );
+  }
+
+  navigateRegister() {
+    this.router.navigate(['/register']);
   }
 }
