@@ -1,24 +1,27 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ToastService } from '@app/services/toast.service';
+import { Component, OnInit } from '@angular/core';
+import { ToastService, ToastStyle } from '@app/services/toast.service';
 
 @Component({
   selector: 'app-toast',
   templateUrl: './toast.component.html',
-  styleUrls: ['./toast.component.css']
+  styleUrls: ['./toast.component.scss'],
 })
 export class ToastComponent implements OnInit {
-  @Input() message: string = '';
-  displayToast: boolean = false;
+  toasts: { message: string; toastStyle: ToastStyle[] }[] = [];
 
-  constructor(private toastService: ToastService) { }
+  constructor(private toastService: ToastService) {}
 
   ngOnInit() {
-    this.toastService.toast$.subscribe((message) => {
-      this.message = message;
-      this.displayToast = true;
+    this.toastService.toast$.subscribe(({ message, toastStyle, duration }) => {
+      this.toasts.push({ message, toastStyle: [toastStyle, 'toast-message'] });
       setTimeout(() => {
-        this.displayToast = false;
-      }, 3000); // Adjust the timeout as needed
+        this.remove(0);
+      }, duration); // Adjust the timeout as needed
     });
+  }
+
+  remove(index: number) {
+    this.toasts.splice(index, 1);
+    console.log(this.toasts);
   }
 }

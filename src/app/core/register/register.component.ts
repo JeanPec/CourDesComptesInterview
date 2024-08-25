@@ -39,7 +39,6 @@ export class RegisterComponent {
       lastName: ['', []],
       age: [, []],
     });
-    this.toastService.showToast('Action successful!');
   }
 
   register() {
@@ -72,9 +71,5 @@ export class RegisterComponent {
           this.errorMessage = error;
         },
       );
-  }
-
-  login() {
-    this.router.navigate(['/login']);
   }
 }
