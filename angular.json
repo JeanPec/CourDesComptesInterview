@@ -29,8 +29,10 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.css",
-              "src/styles.scss"],
-            "scripts": []
+              "src/styles.scss",
+              "./node_modules/@gouvfr/dsfr/dist/dsfr/dsfr.css",
+              "./node_modules/@gouvfr/dsfr/dist/utility/utility.css"],
+            "scripts": ["./node_modules/@gouvfr/dsfr/dist/dsfr/dsfr.module.js"]
           },
           "configurations": {
             "production": {

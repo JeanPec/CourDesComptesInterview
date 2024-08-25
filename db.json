@@ -115,6 +115,14 @@
       "lastname": "Test123!",
       "age": "Test123!",
       "id": 13
+    },
+    {
+      "email": "teste@exemplo.us",
+      "password": "$2a$10$DDGX.XHYb14DuA7YHLAvqurSvYYNiVorPGezgzBuksQGgqp1ndKnO",
+      "firstname": "João",
+      "lastname": "Souza Silva",
+      "age": 12,
+      "id": 14
     }
   ],
   "transactions": [

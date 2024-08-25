@@ -9,8 +9,11 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './core/register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth.service';
+import { PermissionsService } from './services/permissions.service';
 import { UserComponent } from './user/user.component';
-import { ToastComponent } from './components/toast/toast.component';
+import { CookieService } from 'ngx-cookie-service';
+import { AlertComponent } from './components/alert/alert.component';
+import { DsfrAlertModule } from '@edugouvfr/ngx-dsfr';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,7 @@ import { ToastComponent } from './components/toast/toast.component';
     UserComponent,
     LoginComponent,
     RegisterComponent,
-    ToastComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,8 +29,9 @@ import { ToastComponent } from './components/toast/toast.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    DsfrAlertModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, CookieService, PermissionsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PASSWORD } from '@app/core/constants/apps';
+import { AlertService } from '@app/services/alert.service';
 import { AuthService } from '@app/services/auth.service';
 
 @Component({
@@ -11,12 +12,12 @@ import { AuthService } from '@app/services/auth.service';
 })
 export class LoginComponent {
   signInForm!: FormGroup;
-  errorMessage!: string;
 
   readonly userPassword = PASSWORD;
 
   constructor(
     private formBuilder: FormBuilder,
+    private alertService: AlertService,
     private service: AuthService,
     private router: Router,
   ) {}
@@ -48,12 +49,8 @@ export class LoginComponent {
           this.router.navigate(['/user']);
         },
         (error) => {
-          this.errorMessage = error;
+          this.alertService.showAlert('Error', error, 'error');
         },
       );
-  }
-
-  register() {
-    this.router.navigate(['/login']);
   }
 }

@@ -2,6 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginValues, RegisterValues } from '@app/core/types/authType';
 import { ENVIRONNEMENT } from '@environments/environment';
+import { CookieService } from 'ngx-cookie-service';
+
+const TOKEN_DURATION = 3600000; // 1 hour
 
 interface userInfo {
   user: {
@@ -22,13 +25,11 @@ interface userInfo {
 export class AuthService {
   loginURL = ENVIRONNEMENT.baseUrl + ENVIRONNEMENT.urls.login;
   registerURL = ENVIRONNEMENT.baseUrl + ENVIRONNEMENT.urls.register;
-  private userInfo: userInfo | null = null;
 
-  constructor(private http: HttpClient) {}
-
-  Proceedregister(inputdata: RegisterValues) {
-    console.log(inputdata);
-  }
+  constructor(
+    private http: HttpClient,
+    private cookieService: CookieService,
+  ) {}
 
   Login(inputdata: LoginValues) {
     return new Promise<void>((resolve, reject) => {
@@ -38,8 +39,11 @@ export class AuthService {
         })
         .subscribe({
           next: (returnValue: any) => {
-            this.userInfo = returnValue;
-            localStorage.setItem('userInfo', JSON.stringify(returnValue));
+            this.cookieService.set(
+              'userInfo',
+              JSON.stringify(returnValue),
+              new Date(Date.now() + TOKEN_DURATION),
+            );
             resolve();
           },
           error: (error) => reject(error),
@@ -55,8 +59,11 @@ export class AuthService {
         })
         .subscribe({
           next: (returnValue: any) => {
-            this.userInfo = returnValue;
-            localStorage.setItem('userInfo', JSON.stringify(returnValue));
+            this.cookieService.set(
+              'userInfo',
+              JSON.stringify(returnValue),
+              new Date(Date.now() + TOKEN_DURATION),
+            );
             resolve();
           },
           error: (error) => reject(error),

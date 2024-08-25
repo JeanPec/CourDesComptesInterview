@@ -1,0 +1,4 @@
+<div class="alertsContainer">
+  <dsfr-alert *ngFor="let alert of alerts; let i = index" [heading]="alert.heading" [message]="alert.message" [severity]="alert.severity" [closeControlLabel]="alert.closeControlLabel" [headingLevel]="'H2'" [ariaRoleValue]="'alert'" [size]="'MD'" [closeable]="true" >
+  </dsfr-alert>
+</div>

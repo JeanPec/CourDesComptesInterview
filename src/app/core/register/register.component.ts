@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PASSWORD } from '@app/core/constants/apps';
+import { AlertService } from '@app/services/alert.service';
 import { AuthService } from '@app/services/auth.service';
-import { ToastService } from '@app/services/toast.service';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +12,6 @@ import { ToastService } from '@app/services/toast.service';
 })
 export class RegisterComponent {
   registerForm!: FormGroup;
-  errorMessage!: string;
 
   readonly userPassword = PASSWORD;
 
@@ -20,7 +19,7 @@ export class RegisterComponent {
     private formBuilder: FormBuilder,
     private service: AuthService,
     private router: Router,
-    private toastService: ToastService,
+    private alertService: AlertService,
   ) {}
 
   ngOnInit(): void {
@@ -51,8 +50,7 @@ export class RegisterComponent {
 
 
     if (confirmPassword !== password) {
-      this.errorMessage =
-        "Les deux mots de passe ne correspondent pas, veuillez vérifier qu'ils soient égaux";
+      this.alertService.showAlert("Error", "Les deux mots de passe ne correspondent pas, veuillez vérifier qu'ils soient égaux", 'error');
       return;
     }
     this.service
@@ -68,7 +66,7 @@ export class RegisterComponent {
           this.router.navigate(['/user']);
         },
         (error) => {
-          this.errorMessage = error;
+          this.alertService.showAlert("Error", error, 'error');
         },
       );
   }
