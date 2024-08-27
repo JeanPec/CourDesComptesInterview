@@ -18,7 +18,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AlertComponent } from './components/alert/alert.component';
-import { RegisterComponent } from './core/register/register.component';
+import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth.service';
 import { PermissionsService } from './services/permissions.service';

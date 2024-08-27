@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RegisterComponent } from './core/register/register.component';
+import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { authGuard } from './services/permissions.service';
 import { UserComponent } from './user/user.component';

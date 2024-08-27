@@ -7,11 +7,18 @@
             <h1 class="fr-col-12">
               Créer un compte
             </h1>
+            <dsfr-alert *ngIf="alert" [heading]="alert.heading" [message]="alert.message" [severity]="alert.severity" [closeControlLabel]="alert.closeControlLabel" [headingLevel]="'H3'" [ariaRoleValue]="'alert'" [size]="'MD'" [closeable]="true" >
+            </dsfr-alert>
             <form [formGroup]="registerForm" (ngSubmit)="register()">
               <dsfr-form-fieldset>
                 <dsfr-form-email *fieldsetElement formControlName="email" label="Email" type="email" />
                 <dsfr-form-password *fieldsetElement label="Mot de passe" formControlName="password"
                   [autocomplete]="'current-password'" />
+                  <dsfr-form-password *fieldsetElement label="Confirmez le mot de passe" formControlName="confirmPassword"
+                    [autocomplete]="'confirm-password'" />
+                    <dsfr-form-input *fieldsetElement label="Prénom" formControlName="firstName" />
+                    <dsfr-form-input *fieldsetElement label="Nom de famille" formControlName="lastName" />
+                    <dsfr-form-input *fieldsetElement type="number" label="Age" formControlName="age" />
                   <dsfr-buttons-group *fieldsetElement>
                     <dsfr-button type="submit" label="Se connecter" class="dsfr-button fr-mt-4v" variant="primary" ariaLabel="Se connecter" [disabled]="registerForm.invalid"></dsfr-button>
                   </dsfr-buttons-group>

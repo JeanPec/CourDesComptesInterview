@@ -38,7 +38,6 @@ export class LoginComponent {
   }
 
   signIn() {
-    console.log(event)
     const email = this.signInForm.get('email')?.value;
     const password = this.signInForm.get('password')?.value;
     this.service
@@ -51,7 +50,7 @@ export class LoginComponent {
           this.router.navigate(['/user']);
         },
         (error) => {
-          this.alertService.showAlert('Error', error, 'error');
+          this.alertService.showAlert('Error', error.error, 'error');
         },
       );
   }
