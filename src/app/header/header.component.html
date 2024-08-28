@@ -1,0 +1,5 @@
+<dsfr-header [logoLabel]="'République<br/>Française'" [logoLink]="''"
+    [logoTooltipMessage]="'Informations complémentaires sur le site ou service'" [serviceTitle]="'Test Angular'"
+    [menu]="[{label: 'Profil', routerLink: '/user'}, {label: 'Nouvelle Transaction', routerLink: '/transaction'}]"
+    [headerToolsLinks]="[{mode: 'button', label: 'Thème', customClass: 'fr-icon-theme-fill', ariaControls: 'theme-modal-id'}, {label: 'Se déconnecter', icon: 'fr-icon-logout-box-r-line', route: 'logout', mode: 'button'}]"
+    [display]="false" (linkSelect)="linkSelect($event)"></dsfr-header>

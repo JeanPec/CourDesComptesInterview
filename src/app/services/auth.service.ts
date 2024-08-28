@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginValues, RegisterValues } from '@app/core/types/authType';
 import { ENVIRONNEMENT } from '@environments/environment';
 import { CookieService } from 'ngx-cookie-service';
@@ -29,7 +30,15 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private cookieService: CookieService,
+    private router: Router,
   ) {}
+
+  Logout() {
+    if(this.cookieService.check('userInfo')) {
+      this.cookieService.delete('userInfo');
+      this.router.navigate(['/login']);
+    }
+  }
 
   Login(inputdata: LoginValues) {
     return new Promise<void>((resolve, reject) => {

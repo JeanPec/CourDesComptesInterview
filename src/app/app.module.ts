@@ -12,6 +12,7 @@ import {
   DsfrFormFieldsetModule,
   DsfrFormInputModule,
   DsfrFormPasswordModule,
+  DsfrHeaderModule,
   DsfrLoginComponent,
 } from '@edugouvfr/ngx-dsfr';
 import { CookieService } from 'ngx-cookie-service';
@@ -23,6 +24,8 @@ import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth.service';
 import { PermissionsService } from './services/permissions.service';
 import { UserComponent } from './user/user.component';
+import { PrivateLayoutComponent } from './private-layout/private-layout.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ import { UserComponent } from './user/user.component';
     AlertComponent,
     RegisterComponent,
     LoginComponent,
+    PrivateLayoutComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +52,7 @@ import { UserComponent } from './user/user.component';
     DsfrFormPasswordModule,
     DsfrButtonsGroupModule,
     DsfrButtonModule,
+    DsfrHeaderModule,
   ],
   providers: [AuthService, CookieService, PermissionsService],
   bootstrap: [AppComponent],

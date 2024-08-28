@@ -4,20 +4,29 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { authGuard } from './services/permissions.service';
 import { UserComponent } from './user/user.component';
+import { PrivateLayoutComponent } from './private-layout/private-layout.component';
 
 const routes: Routes = [
   {
+    title: 'login',
     path: 'login',
     component: LoginComponent,
   },
   {
+    title: 'register',
     path: 'register',
     component: RegisterComponent,
   },
   {
-    path: 'user',
-    component: UserComponent,
+    title: 'private-layout',
+    path: '',
+    component: PrivateLayoutComponent,
     canActivate: [authGuard],
+    children: [
+      { path: '', redirectTo: 'user', pathMatch: 'full' },
+      { path: 'user', title: 'user', component: UserComponent },
+      { path: 'transaction', title: 'transaction', component: UserComponent },
+    ],
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'login' },
