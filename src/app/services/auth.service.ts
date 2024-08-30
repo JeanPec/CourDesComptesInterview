@@ -7,17 +7,19 @@ import { CookieService } from 'ngx-cookie-service';
 
 const TOKEN_DURATION = 3600000; // 1 hour
 
-interface userInfo {
-  user: {
-    id: number;
-    first: string;
-    last: string;
-    email: string;
-    password: string;
-    created: string;
-    initial_balance: number;
-  };
-  accessToken: number;
+export interface UserInfo {
+  id: number;
+  first: string;
+  last: string;
+  email: string;
+  password: string;
+  created: Date;
+  initial_balance: number;
+}
+
+interface UserToken {
+  user: UserInfo;
+  accessToken: string;
 }
 
 @Injectable({
@@ -33,9 +35,19 @@ export class AuthService {
     private router: Router,
   ) {}
 
+  //to add case where ther is no token redirect to error page
+  getAuthorizationToken(): string | undefined {
+      if(!this.cookieService.check('userToken')) return undefined;
+      return JSON.parse(this.cookieService.get('userToken')).accessToken;
+  }
+
+  WhoAmI(): UserInfo {
+    return JSON.parse(this.cookieService.get('userToken')).user;
+  }
+
   Logout() {
-    if(this.cookieService.check('userInfo')) {
-      this.cookieService.delete('userInfo');
+    if(this.cookieService.check('userToken')) {
+      this.cookieService.delete('userToken');
       this.router.navigate(['/login']);
     }
   }
@@ -49,13 +61,13 @@ export class AuthService {
         .subscribe({
           next: (returnValue: any) => {
             this.cookieService.set(
-              'userInfo',
+              'userToken',
               JSON.stringify(returnValue),
               new Date(Date.now() + TOKEN_DURATION),
             );
             resolve();
           },
-          error: (error) => reject(error),
+          error: (error) => {console.log(error); reject(error)},
         });
     });
   }
@@ -69,7 +81,7 @@ export class AuthService {
         .subscribe({
           next: (returnValue: any) => {
             this.cookieService.set(
-              'userInfo',
+              'userToken',
               JSON.stringify(returnValue),
               new Date(Date.now() + TOKEN_DURATION),
             );

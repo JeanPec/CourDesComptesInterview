@@ -12,7 +12,7 @@ export class PermissionsService {
   constructor(private cookieService: CookieService, public router: Router) {}
 
   canActivate(): boolean {
-    if (this.cookieService.check('userInfo')) {
+    if (this.cookieService.check('userToken')) {
       return true
     } else {
       this.router.navigate(['/login']);
