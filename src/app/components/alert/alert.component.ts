@@ -31,6 +31,5 @@ export class AlertComponent implements OnInit {
 
   remove(index: number) {
     this.alerts.splice(index, 1);
-    console.log(this.alerts);
   }
 }

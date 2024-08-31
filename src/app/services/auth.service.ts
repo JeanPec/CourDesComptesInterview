@@ -67,7 +67,7 @@ export class AuthService {
             );
             resolve();
           },
-          error: (error) => {console.log(error); reject(error)},
+          error: (error) => reject(error),
         });
     });
   }

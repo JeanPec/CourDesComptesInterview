@@ -12,9 +12,9 @@ export class UserComponent {
   userSum: number = 0;
   constructor(private service: AuthService, private transactions: TransactionsService) {}
 
-  async ngOnInit() {
+  ngOnInit() {
     this.user = this.service.WhoAmI();
-    this.userSum = await this.transactions.updatedSum(this.user.id, this.user.initial_balance); 
+    this.userSum = this.transactions.updatedSum(this.user.id, this.user.initial_balance);
   }
 
   linkSelect() {

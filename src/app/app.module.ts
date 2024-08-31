@@ -14,12 +14,16 @@ import {
   DsfrFormPasswordModule,
   DsfrHeaderModule,
   DsfrLoginComponent,
+  DsfrTableModule,
   DsfrTagModule,
 } from '@edugouvfr/ngx-dsfr';
 import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { DateComponent } from './components/date/date.component';
+import { PriceComponent } from './components/price/price.component';
+import { TransactionsTableComponent } from './components/transactions-table/transactions-table.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { PrivateLayoutComponent } from './private-layout/private-layout.component';
@@ -28,8 +32,7 @@ import { AuthInterceptor } from './services/auth-interceptor.service';
 import { AuthService } from './services/auth.service';
 import { PermissionsService } from './services/permissions.service';
 import { UserComponent } from './user/user.component';
-import { DateComponent } from './components/date/date.component';
-import { PriceComponent } from './components/price/price.component';
+import { TransactionsService } from './services/transactions.service';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,7 @@ import { PriceComponent } from './components/price/price.component';
     HeaderComponent,
     PriceComponent,
     DateComponent,
+    TransactionsTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,8 +64,15 @@ import { PriceComponent } from './components/price/price.component';
     DsfrButtonModule,
     DsfrHeaderModule,
     DsfrTagModule,
+    DsfrTableModule,
   ],
-  providers: [AuthService, CookieService, PermissionsService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
+  providers: [
+    AuthService,
+    CookieService,
+    PermissionsService,
+    TransactionsService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

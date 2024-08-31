@@ -16,6 +16,10 @@
                     <app-price [price]="userSum" class="fr-col-8"/>
                 </div>
             </section>
+            <section *ngIf="user">
+                <h2>Transactions</h2>
+                <app-transactions-table [userId]="user.id"/>
+            </section>
         </div>
     </div>
 </main>
