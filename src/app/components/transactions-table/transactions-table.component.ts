@@ -5,8 +5,15 @@ import {
   Transaction,
   TransactionsService,
 } from '@app/services/transactions.service';
+import { UsersService } from '@app/services/users.service';
 
-const HEADER = [{key: 'type', text: 'Type'},{key: 'amount', text: 'Montant'},{key: 'date', text: 'Date'}];
+const HEADER = [
+  { key: 'type', text: 'Type' },
+  { key: 'benefactor', text: 'Bénéficiaire' },
+  { key: 'creditor', text: 'Créditeur' },
+  { key: 'amount', text: 'Montant' },
+  { key: 'date', text: 'Date' },
+];
 
 @Component({
   selector: 'app-transactions-table',
@@ -25,14 +32,21 @@ export class TransactionsTableComponent {
   lastPage = false;
   activeSort: Sort = { key: 'date', order: Direction.ASC };
 
-  constructor(private transactionsService: TransactionsService) {}
+  constructor(
+    private transactionsService: TransactionsService,
+    private userService: UsersService,
+  ) {}
 
   private formatDataToTable(transactions: Transaction[]) {
-    this.dataRows = transactions.map(({ amount, toUserId, date }) => ({
-      amount,
-      isDebit: this.userId === toUserId,
-      date,
-    }));
+    this.dataRows = transactions.map(
+      ({ amount, fromUserId, toUserId, date }) => ({
+        amount,
+        isDebit: this.userId === toUserId,
+        fromUser: this.userService.getUserFromId(fromUserId),
+        toUser: this.userService.getUserFromId(toUserId),
+        date,
+      }),
+    );
   }
 
   ngOnInit() {

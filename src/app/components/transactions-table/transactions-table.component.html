@@ -6,13 +6,20 @@
                     <caption> Tableau de Transactions </caption>
                     <thead>
                         <tr>
-                            <th *ngFor="let header of dataHeader" scope="col" (click)="handleSort(header.key)">{{header.text}}<span *ngIf="activeSort.key === header.key"><span *ngIf="activeSort.order === 1 else elseBlock" class="fr-ml-1v fr-icon-arrow-down-line" aria-hidden="true"></span><ng-template #elseBlock><span class="fr-ml-1v fr-icon-arrow-up-line" aria-hidden="true"></span></ng-template></span></th>
+                            <th *ngFor="let header of dataHeader" scope="col" (click)="handleSort(header.key)">
+                                {{header.text}}<span *ngIf="activeSort.key === header.key"><span
+                                        *ngIf="activeSort.order === 1 else elseBlock"
+                                        class="fr-ml-1v fr-icon-arrow-down-line" aria-hidden="true"></span><ng-template
+                                        #elseBlock><span class="fr-ml-1v fr-icon-arrow-up-line"
+                                            aria-hidden="true"></span></ng-template></span></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let row of dataRows; let i = index" [id]="'table-md-row-key-' + i">
                             <td><dsfr-badge [label]="row.isDebit ? 'Débit' : 'Crédit'" [noIcon]="true" [size]="'MD'"
                                     [severity]="row.isDebit ? 'success' : 'error'"></dsfr-badge></td>
+                                    <td>{{row.toUser | userDisplay}}</td>
+                            <td>{{row.fromUser | userDisplay}}</td>
                             <td><app-price [price]="row.amount" /></td>
                             <td><app-date [date]="row.date" /></td>
                         </tr>

@@ -33,6 +33,7 @@ import { AuthService } from './services/auth.service';
 import { PermissionsService } from './services/permissions.service';
 import { TransactionsService } from './services/transactions.service';
 import { UserComponent } from './user/user.component';
+import { UserDisplayPipe } from './pipes/user-display.pipe';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { UserComponent } from './user/user.component';
     PriceComponent,
     DateComponent,
     TransactionsTableComponent,
+    UserDisplayPipe,
   ],
   imports: [
     BrowserModule,
