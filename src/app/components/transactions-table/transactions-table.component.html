@@ -1,62 +1,39 @@
-<dsfr-table 
-    [data]="{columns:  dataHeader, rows: dataRows}"></dsfr-table>
-<nav role="navigation" class="fr-pagination" aria-label="Pagination">
+<div class="fr-table--sm fr-table" id="transaction-table">
+    <div class="fr-table__wrapper">
+        <div class="fr-table__container">
+            <div class="fr-table__content">
+                <table id="table-sm">
+                    <caption> Tableau de Transactions </caption>
+                    <thead>
+                        <tr>
+                            <th *ngFor="let header of dataHeader" scope="col" (click)="handleSort(header.key)">{{header.text}}<span *ngIf="activeSort.key === header.key"><span *ngIf="activeSort.order === 1 else elseBlock" class="fr-ml-1v fr-icon-arrow-down-line" aria-hidden="true"></span><ng-template #elseBlock><span class="fr-ml-1v fr-icon-arrow-up-line" aria-hidden="true"></span></ng-template></span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of dataRows; let i = index" [id]="'table-md-row-key-' + i">
+                            <td><dsfr-badge [label]="row.isDebit ? 'Débit' : 'Crédit'" [noIcon]="true" [size]="'MD'"
+                                    [severity]="row.isDebit ? 'success' : 'error'"></dsfr-badge></td>
+                            <td><app-price [price]="row.amount" /></td>
+                            <td><app-date [date]="row.date" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="showPagination" class="fr-pagination" aria-label="Pagination">
     <ul class="fr-pagination__list">
         <li>
-            <a class="fr-pagination__link fr-pagination__link--first" aria-disabled="true" role="link">
-                Première page
-            </a>
-        </li>
-        <li>
-            <a class="fr-pagination__link fr-pagination__link--prev fr-pagination__link--lg-label" aria-disabled="true"
-                role="link">
+            <button class="fr-pagination__link fr-pagination__link--prev fr-pagination__link--lg-label"
+                [disabled]="firstPage" (click)="handlePageChange(false)">
                 Page précédente
-            </a>
-        </li>
+            </button>
         <li>
-            <a class="fr-pagination__link" aria-current="page" title="Page 1">
-                1
-            </a>
-        </li>
-        <li>
-            <a class="fr-pagination__link" href="#" title="Page 2">
-                2
-            </a>
-        </li>
-        <li>
-            <a class="fr-pagination__link fr-displayed-lg" href="#" title="Page 3">
-                3
-            </a>
-        </li>
-        <li>
-            <a class="fr-pagination__link fr-displayed-lg">
-                …
-            </a>
-        </li>
-        <li>
-            <a class="fr-pagination__link fr-displayed-lg" href="#" title="Page 130">
-                130
-            </a>
-        </li>
-        <li>
-            <a class="fr-pagination__link fr-displayed-lg" href="#" title="Page 131">
-                131
-            </a>
-        </li>
-        <li>
-            <a class="fr-pagination__link" href="#" title="Page 132">
-                132
-            </a>
-        </li>
-        <li>
-            <a class="fr-pagination__link fr-pagination__link--next fr-pagination__link--lg-label" href="#">
+            <button class="fr-pagination__link fr-pagination__link--next fr-pagination__link--lg-label"
+                [disabled]="lastPage" (click)="handlePageChange(true)">
                 Page suivante
-            </a>
-        </li>
-        <li>
-            <a class="fr-pagination__link fr-pagination__link--last" href="#">
-                Dernière page
-            </a>
+            </button>
         </li>
     </ul>
-</nav>
+</div>

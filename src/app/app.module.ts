@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   DsfrAlertModule,
+  DsfrBadgeModule,
   DsfrButtonModule,
   DsfrButtonsGroupModule,
   DsfrFormEmailModule,
@@ -15,7 +16,6 @@ import {
   DsfrHeaderModule,
   DsfrLoginComponent,
   DsfrTableModule,
-  DsfrTagModule,
 } from '@edugouvfr/ngx-dsfr';
 import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
@@ -31,8 +31,8 @@ import { RegisterComponent } from './register/register.component';
 import { AuthInterceptor } from './services/auth-interceptor.service';
 import { AuthService } from './services/auth.service';
 import { PermissionsService } from './services/permissions.service';
-import { UserComponent } from './user/user.component';
 import { TransactionsService } from './services/transactions.service';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +63,7 @@ import { TransactionsService } from './services/transactions.service';
     DsfrButtonsGroupModule,
     DsfrButtonModule,
     DsfrHeaderModule,
-    DsfrTagModule,
+    DsfrBadgeModule,
     DsfrTableModule,
   ],
   providers: [

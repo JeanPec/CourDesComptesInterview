@@ -1,7 +1,7 @@
 <main>
     <div class="fr-container fr-py-12v">
         <div class="fr-grid-row fr-grid-row--gutters">
-            <section *ngIf="user">
+            <section *ngIf="user" class="fr-mb-8v">
                 <h2>Informations</h2>
                 <div class="fr-grid-row">
                     <div class="fr-col-4 fr-mb-1w">Prénom :</div>
@@ -16,7 +16,7 @@
                     <app-price [price]="userSum" class="fr-col-8"/>
                 </div>
             </section>
-            <section *ngIf="user">
+            <section *ngIf="user" >
                 <h2>Transactions</h2>
                 <app-transactions-table [userId]="user.id"/>
             </section>

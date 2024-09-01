@@ -85,7 +85,7 @@
       "id": 10,
       "first": "Brady",
       "last": "Boehm",
-      "email": "Brady.Boehm@bernie.net",
+      "email": "brady.boehm@bernie.net",
       "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "June 15, 2021",
       "initial_balance": "876073"
@@ -103,7 +103,7 @@
       "id": 12,
       "first": "Frieda",
       "last": "Schultz",
-      "email": "Frieda.Schultz@germaine.info",
+      "email": "frieda.schultz@germaine.com",
       "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "April 11, 2023",
       "initial_balance": "462279"
@@ -112,45 +112,703 @@
   "transactions": [
     {
       "id": 1,
-      "fromUserId": 1,
-      "toUserId": 2,
-      "amount": 15000,
-      "date": "2024-06-01T12:30:00Z"
+      "fromUserId": 12,
+      "toUserId": 10,
+      "amount": 8880,
+      "date": "2024-08-19T19:10:51Z"
     },
     {
       "id": 2,
-      "fromUserId": 4,
-      "toUserId": 12,
-      "amount": 1500,
-      "date": "2024-06-04T11:54:00Z"
+      "fromUserId": 6,
+      "toUserId": 4,
+      "amount": 7189,
+      "date": "2024-09-01T19:10:51Z"
     },
     {
       "id": 3,
-      "fromUserId": 2,
+      "fromUserId": 8,
       "toUserId": 1,
-      "amount": 7000,
-      "date": "2024-06-22T08:27:00Z"
+      "amount": 76038,
+      "date": "2024-08-19T19:10:51Z"
     },
     {
       "id": 4,
-      "fromUserId": 8,
-      "toUserId": 6,
-      "amount": 27000,
-      "date": "2024-07-06T14:03:26:00Z"
+      "fromUserId": 1,
+      "toUserId": 5,
+      "amount": 48439,
+      "date": "2024-08-26T19:10:51Z"
     },
     {
       "id": 5,
-      "fromUserId": 12,
-      "toUserId": 6,
-      "amount": 4000,
-      "date": "2024-06-25T20:35:18:00Z"
+      "fromUserId": 1,
+      "toUserId": 9,
+      "amount": 16782,
+      "date": "2024-08-10T19:10:51Z"
     },
     {
       "id": 6,
+      "fromUserId": 1,
+      "toUserId": 9,
+      "amount": 25761,
+      "date": "2024-08-21T19:10:51Z"
+    },
+    {
+      "id": 7,
+      "fromUserId": 1,
+      "toUserId": 8,
+      "amount": 12672,
+      "date": "2024-08-28T19:10:51Z"
+    },
+    {
+      "id": 8,
+      "fromUserId": 1,
+      "toUserId": 9,
+      "amount": 68938,
+      "date": "2024-08-27T19:10:51Z"
+    },
+    {
+      "id": 9,
+      "fromUserId": 4,
+      "toUserId": 6,
+      "amount": 76907,
+      "date": "2024-08-13T19:10:51Z"
+    },
+    {
+      "id": 10,
+      "fromUserId": 11,
+      "toUserId": 12,
+      "amount": 4829,
+      "date": "2024-08-08T19:10:51Z"
+    },
+    {
+      "id": 11,
+      "fromUserId": 7,
+      "toUserId": 1,
+      "amount": 15934,
+      "date": "2024-08-05T19:10:51Z"
+    },
+    {
+      "id": 12,
+      "fromUserId": 7,
+      "toUserId": 8,
+      "amount": 45749,
+      "date": "2024-08-13T19:10:51Z"
+    },
+    {
+      "id": 13,
+      "fromUserId": 2,
+      "toUserId": 12,
+      "amount": 39586,
+      "date": "2024-08-21T19:10:51Z"
+    },
+    {
+      "id": 14,
+      "fromUserId": 11,
+      "toUserId": 4,
+      "amount": 46788,
+      "date": "2024-08-16T19:10:51Z"
+    },
+    {
+      "id": 15,
+      "fromUserId": 11,
+      "toUserId": 6,
+      "amount": 1739,
+      "date": "2024-08-03T19:10:51Z"
+    },
+    {
+      "id": 16,
+      "fromUserId": 10,
+      "toUserId": 1,
+      "amount": 79510,
+      "date": "2024-08-09T19:10:51Z"
+    },
+    {
+      "id": 17,
+      "fromUserId": 9,
+      "toUserId": 4,
+      "amount": 16623,
+      "date": "2024-08-11T19:10:51Z"
+    },
+    {
+      "id": 18,
+      "fromUserId": 5,
+      "toUserId": 8,
+      "amount": 91832,
+      "date": "2024-08-28T19:10:51Z"
+    },
+    {
+      "id": 19,
+      "fromUserId": 10,
+      "toUserId": 3,
+      "amount": 40936,
+      "date": "2024-08-28T19:10:51Z"
+    },
+    {
+      "id": 20,
+      "fromUserId": 1,
+      "toUserId": 8,
+      "amount": 56655,
+      "date": "2024-08-22T19:10:51Z"
+    },
+    {
+      "id": 21,
+      "fromUserId": 5,
+      "toUserId": 3,
+      "amount": 84249,
+      "date": "2024-08-19T19:10:51Z"
+    },
+    {
+      "id": 22,
+      "fromUserId": 4,
+      "toUserId": 6,
+      "amount": 68534,
+      "date": "2024-08-25T19:10:51Z"
+    },
+    {
+      "id": 23,
       "fromUserId": 11,
       "toUserId": 2,
-      "amount": 41000,
-      "date": "2024-06-25T20:35:18:00Z"
+      "amount": 76935,
+      "date": "2024-08-04T19:10:51Z"
+    },
+    {
+      "id": 24,
+      "fromUserId": 5,
+      "toUserId": 4,
+      "amount": 24203,
+      "date": "2024-08-12T19:10:51Z"
+    },
+    {
+      "id": 25,
+      "fromUserId": 4,
+      "toUserId": 5,
+      "amount": 47863,
+      "date": "2024-08-11T19:10:51Z"
+    },
+    {
+      "id": 26,
+      "fromUserId": 6,
+      "toUserId": 3,
+      "amount": 14026,
+      "date": "2024-08-24T19:10:51Z"
+    },
+    {
+      "id": 27,
+      "fromUserId": 8,
+      "toUserId": 2,
+      "amount": 14211,
+      "date": "2024-08-16T19:10:51Z"
+    },
+    {
+      "id": 28,
+      "fromUserId": 11,
+      "toUserId": 5,
+      "amount": 24746,
+      "date": "2024-08-14T19:10:51Z"
+    },
+    {
+      "id": 29,
+      "fromUserId": 2,
+      "toUserId": 10,
+      "amount": 18562,
+      "date": "2024-08-28T19:10:51Z"
+    },
+    {
+      "id": 30,
+      "fromUserId": 3,
+      "toUserId": 7,
+      "amount": 32507,
+      "date": "2024-08-04T19:10:51Z"
+    },
+    {
+      "id": 31,
+      "fromUserId": 12,
+      "toUserId": 1,
+      "amount": 38880,
+      "date": "2024-08-31T19:10:51Z"
+    },
+    {
+      "id": 32,
+      "fromUserId": 4,
+      "toUserId": 6,
+      "amount": 54849,
+      "date": "2024-08-19T19:10:51Z"
+    },
+    {
+      "id": 33,
+      "fromUserId": 5,
+      "toUserId": 4,
+      "amount": 81907,
+      "date": "2024-08-13T19:10:51Z"
+    },
+    {
+      "id": 34,
+      "fromUserId": 1,
+      "toUserId": 10,
+      "amount": 35212,
+      "date": "2024-08-30T19:10:51Z"
+    },
+    {
+      "id": 35,
+      "fromUserId": 3,
+      "toUserId": 6,
+      "amount": 64818,
+      "date": "2024-08-29T19:10:51Z"
+    },
+    {
+      "id": 36,
+      "fromUserId": 9,
+      "toUserId": 5,
+      "amount": 51063,
+      "date": "2024-08-06T19:10:51Z"
+    },
+    {
+      "id": 37,
+      "fromUserId": 6,
+      "toUserId": 8,
+      "amount": 41485,
+      "date": "2024-08-06T19:10:51Z"
+    },
+    {
+      "id": 38,
+      "fromUserId": 9,
+      "toUserId": 7,
+      "amount": 1105,
+      "date": "2024-08-12T19:10:51Z"
+    },
+    {
+      "id": 39,
+      "fromUserId": 2,
+      "toUserId": 9,
+      "amount": 59624,
+      "date": "2024-08-17T19:10:51Z"
+    },
+    {
+      "id": 40,
+      "fromUserId": 7,
+      "toUserId": 6,
+      "amount": 74422,
+      "date": "2024-08-03T19:10:51Z"
+    },
+    {
+      "id": 41,
+      "fromUserId": 7,
+      "toUserId": 2,
+      "amount": 38149,
+      "date": "2024-09-01T19:10:51Z"
+    },
+    {
+      "id": 42,
+      "fromUserId": 6,
+      "toUserId": 10,
+      "amount": 60912,
+      "date": "2024-08-12T19:10:51Z"
+    },
+    {
+      "id": 43,
+      "fromUserId": 9,
+      "toUserId": 6,
+      "amount": 63598,
+      "date": "2024-08-20T19:10:51Z"
+    },
+    {
+      "id": 44,
+      "fromUserId": 6,
+      "toUserId": 12,
+      "amount": 54866,
+      "date": "2024-08-18T19:10:51Z"
+    },
+    {
+      "id": 45,
+      "fromUserId": 3,
+      "toUserId": 12,
+      "amount": 60250,
+      "date": "2024-08-05T19:10:51Z"
+    },
+    {
+      "id": 46,
+      "fromUserId": 5,
+      "toUserId": 7,
+      "amount": 83741,
+      "date": "2024-08-27T19:10:51Z"
+    },
+    {
+      "id": 47,
+      "fromUserId": 4,
+      "toUserId": 12,
+      "amount": 95449,
+      "date": "2024-08-26T19:10:51Z"
+    },
+    {
+      "id": 48,
+      "fromUserId": 1,
+      "toUserId": 10,
+      "amount": 65866,
+      "date": "2024-08-18T19:10:51Z"
+    },
+    {
+      "id": 49,
+      "fromUserId": 12,
+      "toUserId": 3,
+      "amount": 36666,
+      "date": "2024-08-25T19:10:51Z"
+    },
+    {
+      "id": 50,
+      "fromUserId": 1,
+      "toUserId": 2,
+      "amount": 56237,
+      "date": "2024-08-23T19:10:51Z"
+    },
+    {
+      "id": 51,
+      "fromUserId": 7,
+      "toUserId": 2,
+      "amount": 63537,
+      "date": "2024-08-07T19:10:51Z"
+    },
+    {
+      "id": 52,
+      "fromUserId": 7,
+      "toUserId": 10,
+      "amount": 82393,
+      "date": "2024-08-31T19:10:51Z"
+    },
+    {
+      "id": 53,
+      "fromUserId": 12,
+      "toUserId": 10,
+      "amount": 68530,
+      "date": "2024-08-23T19:10:51Z"
+    },
+    {
+      "id": 54,
+      "fromUserId": 9,
+      "toUserId": 11,
+      "amount": 1976,
+      "date": "2024-08-17T19:10:51Z"
+    },
+    {
+      "id": 55,
+      "fromUserId": 1,
+      "toUserId": 7,
+      "amount": 50898,
+      "date": "2024-08-08T19:10:51Z"
+    },
+    {
+      "id": 56,
+      "fromUserId": 5,
+      "toUserId": 10,
+      "amount": 76987,
+      "date": "2024-08-15T19:10:51Z"
+    },
+    {
+      "id": 57,
+      "fromUserId": 11,
+      "toUserId": 3,
+      "amount": 6222,
+      "date": "2024-08-15T19:10:51Z"
+    },
+    {
+      "id": 58,
+      "fromUserId": 2,
+      "toUserId": 5,
+      "amount": 33440,
+      "date": "2024-08-03T19:10:51Z"
+    },
+    {
+      "id": 59,
+      "fromUserId": 6,
+      "toUserId": 9,
+      "amount": 47213,
+      "date": "2024-08-13T19:10:51Z"
+    },
+    {
+      "id": 60,
+      "fromUserId": 3,
+      "toUserId": 6,
+      "amount": 85011,
+      "date": "2024-08-09T19:10:51Z"
+    },
+    {
+      "id": 61,
+      "fromUserId": 8,
+      "toUserId": 6,
+      "amount": 93699,
+      "date": "2024-08-02T19:10:51Z"
+    },
+    {
+      "id": 62,
+      "fromUserId": 10,
+      "toUserId": 6,
+      "amount": 21185,
+      "date": "2024-08-29T19:10:51Z"
+    },
+    {
+      "id": 63,
+      "fromUserId": 8,
+      "toUserId": 12,
+      "amount": 6127,
+      "date": "2024-08-10T19:10:51Z"
+    },
+    {
+      "id": 64,
+      "fromUserId": 2,
+      "toUserId": 6,
+      "amount": 78962,
+      "date": "2024-08-25T19:10:51Z"
+    },
+    {
+      "id": 65,
+      "fromUserId": 8,
+      "toUserId": 10,
+      "amount": 4098,
+      "date": "2024-08-18T19:10:51Z"
+    },
+    {
+      "id": 66,
+      "fromUserId": 2,
+      "toUserId": 4,
+      "amount": 35696,
+      "date": "2024-08-05T19:10:51Z"
+    },
+    {
+      "id": 67,
+      "fromUserId": 9,
+      "toUserId": 7,
+      "amount": 33354,
+      "date": "2024-08-27T19:10:51Z"
+    },
+    {
+      "id": 68,
+      "fromUserId": 5,
+      "toUserId": 4,
+      "amount": 98266,
+      "date": "2024-08-31T19:10:51Z"
+    },
+    {
+      "id": 69,
+      "fromUserId": 2,
+      "toUserId": 9,
+      "amount": 54979,
+      "date": "2024-08-11T19:10:51Z"
+    },
+    {
+      "id": 70,
+      "fromUserId": 4,
+      "toUserId": 9,
+      "amount": 94089,
+      "date": "2024-08-17T19:10:51Z"
+    },
+    {
+      "id": 71,
+      "fromUserId": 9,
+      "toUserId": 4,
+      "amount": 51596,
+      "date": "2024-08-17T19:10:51Z"
+    },
+    {
+      "id": 72,
+      "fromUserId": 11,
+      "toUserId": 12,
+      "amount": 6334,
+      "date": "2024-08-26T19:10:51Z"
+    },
+    {
+      "id": 73,
+      "fromUserId": 9,
+      "toUserId": 2,
+      "amount": 74099,
+      "date": "2024-08-20T19:10:51Z"
+    },
+    {
+      "id": 74,
+      "fromUserId": 6,
+      "toUserId": 1,
+      "amount": 24115,
+      "date": "2024-08-23T19:10:51Z"
+    },
+    {
+      "id": 75,
+      "fromUserId": 5,
+      "toUserId": 8,
+      "amount": 32457,
+      "date": "2024-08-16T19:10:51Z"
+    },
+    {
+      "id": 76,
+      "fromUserId": 3,
+      "toUserId": 10,
+      "amount": 63430,
+      "date": "2024-08-22T19:10:51Z"
+    },
+    {
+      "id": 77,
+      "fromUserId": 5,
+      "toUserId": 2,
+      "amount": 68848,
+      "date": "2024-08-17T19:10:51Z"
+    },
+    {
+      "id": 78,
+      "fromUserId": 2,
+      "toUserId": 11,
+      "amount": 89301,
+      "date": "2024-08-28T19:10:51Z"
+    },
+    {
+      "id": 79,
+      "fromUserId": 6,
+      "toUserId": 5,
+      "amount": 21034,
+      "date": "2024-08-23T19:10:51Z"
+    },
+    {
+      "id": 80,
+      "fromUserId": 5,
+      "toUserId": 1,
+      "amount": 32671,
+      "date": "2024-08-20T19:10:51Z"
+    },
+    {
+      "id": 81,
+      "fromUserId": 7,
+      "toUserId": 2,
+      "amount": 82643,
+      "date": "2024-08-25T19:10:51Z"
+    },
+    {
+      "id": 82,
+      "fromUserId": 10,
+      "toUserId": 9,
+      "amount": 64221,
+      "date": "2024-08-06T19:10:51Z"
+    },
+    {
+      "id": 83,
+      "fromUserId": 1,
+      "toUserId": 6,
+      "amount": 44641,
+      "date": "2024-08-08T19:10:51Z"
+    },
+    {
+      "id": 84,
+      "fromUserId": 12,
+      "toUserId": 11,
+      "amount": 74100,
+      "date": "2024-08-17T19:10:51Z"
+    },
+    {
+      "id": 85,
+      "fromUserId": 2,
+      "toUserId": 5,
+      "amount": 83252,
+      "date": "2024-08-30T19:10:51Z"
+    },
+    {
+      "id": 86,
+      "fromUserId": 7,
+      "toUserId": 12,
+      "amount": 14281,
+      "date": "2024-08-30T19:10:51Z"
+    },
+    {
+      "id": 87,
+      "fromUserId": 12,
+      "toUserId": 9,
+      "amount": 55110,
+      "date": "2024-08-11T19:10:51Z"
+    },
+    {
+      "id": 88,
+      "fromUserId": 2,
+      "toUserId": 3,
+      "amount": 34314,
+      "date": "2024-08-28T19:10:51Z"
+    },
+    {
+      "id": 89,
+      "fromUserId": 9,
+      "toUserId": 12,
+      "amount": 269,
+      "date": "2024-08-23T19:10:51Z"
+    },
+    {
+      "id": 90,
+      "fromUserId": 5,
+      "toUserId": 10,
+      "amount": 19503,
+      "date": "2024-08-06T19:10:51Z"
+    },
+    {
+      "id": 91,
+      "fromUserId": 1,
+      "toUserId": 8,
+      "amount": 85101,
+      "date": "2024-08-06T19:10:51Z"
+    },
+    {
+      "id": 92,
+      "fromUserId": 7,
+      "toUserId": 6,
+      "amount": 18918,
+      "date": "2024-08-15T19:10:51Z"
+    },
+    {
+      "id": 93,
+      "fromUserId": 5,
+      "toUserId": 10,
+      "amount": 87887,
+      "date": "2024-08-04T19:10:51Z"
+    },
+    {
+      "id": 94,
+      "fromUserId": 11,
+      "toUserId": 6,
+      "amount": 93031,
+      "date": "2024-08-24T19:10:51Z"
+    },
+    {
+      "id": 95,
+      "fromUserId": 10,
+      "toUserId": 7,
+      "amount": 27276,
+      "date": "2024-08-26T19:10:51Z"
+    },
+    {
+      "id": 96,
+      "fromUserId": 5,
+      "toUserId": 12,
+      "amount": 57849,
+      "date": "2024-09-01T19:10:51Z"
+    },
+    {
+      "id": 97,
+      "fromUserId": 8,
+      "toUserId": 6,
+      "amount": 85805,
+      "date": "2024-08-11T19:10:51Z"
+    },
+    {
+      "id": 98,
+      "fromUserId": 6,
+      "toUserId": 10,
+      "amount": 27984,
+      "date": "2024-08-22T19:10:51Z"
+    },
+    {
+      "id": 99,
+      "fromUserId": 7,
+      "toUserId": 3,
+      "amount": 11564,
+      "date": "2024-08-21T19:10:51Z"
+    },
+    {
+      "id": 100,
+      "fromUserId": 3,
+      "toUserId": 5,
+      "amount": 26184,
+      "date": "2024-08-02T19:10:51Z"
     }
   ]
 }
