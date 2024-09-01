@@ -51,9 +51,6 @@ export class UsersService {
       created: new Date(),
       initial_balance: 5,
     }
-    if(!this.users.has(userId)) {
-      this.alertService.showAlert('User Error', 'Veuillez rafraichîr la page');
-    }
     return this.users.get(userId) ?? unknowUser;
   }
 }
