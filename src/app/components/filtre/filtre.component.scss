@@ -1,0 +1,19 @@
+.border-right {
+  border-right: 1px solid grey;
+}
+
+.active {
+  color: #000091;
+  color: var(--text-active-blue-france);
+
+  &::before {
+    background-color: #000091;
+    background-color: var(--border-active-blue-france);
+    bottom: 0.75rem;
+    content: "";
+    left: 0;
+    position: absolute;
+    top: 0.75rem;
+    width: 2px;
+  }
+}

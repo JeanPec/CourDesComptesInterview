@@ -4,6 +4,7 @@
             <div class="fr-table__content">
                 <table id="table-sm">
                     <caption> Tableau de Transactions </caption>
+                    <app-filtre />
                     <thead>
                         <tr>
                             <th *ngFor="let header of dataHeader" scope="col" (click)="handleSort(header.key)">

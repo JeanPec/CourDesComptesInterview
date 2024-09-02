@@ -13,8 +13,10 @@ import {
   DsfrFormFieldsetModule,
   DsfrFormInputModule,
   DsfrFormPasswordModule,
+  DsfrFormRadioModule,
   DsfrHeaderModule,
   DsfrLoginComponent,
+  DsfrModalModule,
   DsfrTableModule,
 } from '@edugouvfr/ngx-dsfr';
 import { CookieService } from 'ngx-cookie-service';
@@ -34,6 +36,11 @@ import { PermissionsService } from './services/permissions.service';
 import { TransactionsService } from './services/transactions.service';
 import { UserComponent } from './user/user.component';
 import { UserDisplayPipe } from './pipes/user-display.pipe';
+import { FiltreComponent } from './components/filtre/filtre.component';
+import { TypeFiltreComponent } from './components/filtre/type-filtre/type-filtre.component';
+import { AmountFiltreComponent } from './components/filtre/amount-filtre/amount-filtre.component';
+import { DateFiltreComponent } from './components/filtre/date-filtre/date-filtre.component';
+import { UserFiltreComponent } from './components/filtre/user-filtre/user-filtre.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +55,11 @@ import { UserDisplayPipe } from './pipes/user-display.pipe';
     DateComponent,
     TransactionsTableComponent,
     UserDisplayPipe,
+    FiltreComponent,
+    TypeFiltreComponent,
+    AmountFiltreComponent,
+    DateFiltreComponent,
+    UserFiltreComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +79,8 @@ import { UserDisplayPipe } from './pipes/user-display.pipe';
     DsfrHeaderModule,
     DsfrBadgeModule,
     DsfrTableModule,
+    DsfrModalModule,
+    DsfrFormRadioModule
   ],
   providers: [
     AuthService,

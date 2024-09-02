@@ -1,0 +1,18 @@
+<form [formGroup]="amountForm" (ngSubmit)="apply()">
+    <dsfr-form-fieldset>
+        <p class="fr-mb-2v">Indiquer la fourchette de solde des transactions que vous voulez observer</p>
+        <dsfr-form-input *fieldsetElement formControlName="amount" [label]="'Date avant'" [autoCorrect]="true"
+            [required]="true" [inputWrapMode]="'action'" [type]="'datetime-local'"></dsfr-form-input>
+            <dsfr-form-input
+            formControlName="amount"
+            [label]="'Solde de la transaction'"
+            [required]="true"
+            [pattern]="'[0-9]*'"
+            [inputWrapMode]="'action'"
+            [type]="'number'"
+          ></dsfr-form-input>
+        <dsfr-buttons-group *fieldsetElement>
+            <dsfr-button type="submit" label="Appliquer" class="dsfr-button fr-mt-4v" variant="primary"
+                ariaLabel="Appliquer" [disabled]="amountForm.invalid" ariaControls="filterModal"></dsfr-button>
+        </dsfr-buttons-group>
+    </dsfr-form-fieldset>

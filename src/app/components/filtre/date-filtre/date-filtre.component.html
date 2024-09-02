@@ -1,0 +1,12 @@
+<form [formGroup]="dateForm" (ngSubmit)="apply()">
+    <dsfr-form-fieldset>
+        <p class="fr-mb-2v">Indiquer l'interval de temps des transactions que vous voulez observer</p>
+        <dsfr-form-input *fieldsetElement formControlName="beforeDate" [label]="'Date avant'" [autoCorrect]="true"
+            [required]="true" [inputWrapMode]="'action'" [type]="'datetime-local'"Œ></dsfr-form-input>
+        <dsfr-form-input *fieldsetElement formControlName="afterDate" [label]="'date après'" [autoCorrect]="true"
+            [required]="true" [inputWrapMode]="'action'" [type]="'datetime-local'"></dsfr-form-input>
+        <dsfr-buttons-group *fieldsetElement>
+            <dsfr-button type="submit" label="Appliquer" class="dsfr-button fr-mt-4v" variant="primary"
+                ariaLabel="Appliquer" [disabled]="dateForm.invalid" ariaControls="filterModal"></dsfr-button>
+        </dsfr-buttons-group>
+    </dsfr-form-fieldset>

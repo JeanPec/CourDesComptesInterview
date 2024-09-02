@@ -1,0 +1,34 @@
+<div class="fr-grid-row">
+    <div class="fr-col-4">
+        <dsfr-button label="Filtre" ariaControls="filterModal"></dsfr-button>
+    </div>
+    <div class="fr-col-8">
+        <div>hello</div>
+    </div>
+</div>
+<dsfr-modal dialogId="filterModal" titleModal="Filtre" [autoCloseOnAction]="false">
+    <div class="fr-grid-row">
+        <nav class="fr-sidemenu fr-sidemenu__inner fr-col-4">
+            <div class="fr-sidemenu__title" id="fr-sidemenu-title">Sélectionnez un filtre</div>
+            <ul class="fr-sidemenu__list">
+                <li class="fr-sidemenu__item"> <button class="fr-sidemenu__link" [class.active]="showFilter === 'type'" (click)="changeFilter('type')">Type</button>
+                </li>
+                <li class="fr-sidemenu__item"> <button class="fr-sidemenu__link" [class.active]="showFilter === 'benefactor'" (click)="changeFilter('benefactor')">Bénéficiaire</button>
+                </li>
+                <li class="fr-sidemenu__item"> <button class="fr-sidemenu__link" [class.active]="showFilter === 'creditor'" (click)="changeFilter('creditor')">Créditeur</button>
+                </li>
+                <li class="fr-sidemenu__item"> <button class="fr-sidemenu__link" [class.active]="showFilter === 'amount'" (click)="changeFilter('amount')">Montant</button>
+                </li>
+                <li class="fr-sidemenu__item"> <button class="fr-sidemenu__link" [class.active]="showFilter === 'date'" (click)="changeFilter('date')">Date</button>
+                </li>
+            </ul>
+        </nav>
+        <div class="fr-col-8 fr-pl-2v">
+            <app-type-filtre *ngIf="showFilter === 'type'"/>
+            <app-user-filtre *ngIf="showFilter === 'benefactor'" nameInput/>
+            <app-user-filtre *ngIf="showFilter === 'creditor'"/>
+            <app-amount-filtre *ngIf="showFilter === 'amount'"/>
+            <app-date-filtre *ngIf="showFilter === 'date'"/>
+        </div>
+    </div>
+</dsfr-modal>
