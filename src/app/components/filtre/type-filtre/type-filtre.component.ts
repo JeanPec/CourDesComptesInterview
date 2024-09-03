@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FilterInput } from '../filtre.component';
 
 @Component({
   selector: 'app-type-filtre',
@@ -7,8 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./type-filtre.component.scss'],
 })
 export class TypeFiltreComponent {
-  @Input() typeInput: 'credit' | 'debit' | undefined = undefined;
-  @Output() applyEvent = new EventEmitter<any>();
+  @Input() typeFilter: FilterInput = { type: 'type', value: {}};
+  @Output() applyEvent = new EventEmitter<FilterInput>();
   typeForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
@@ -18,13 +19,14 @@ export class TypeFiltreComponent {
   }
 
   initForm() {
+    const typeInput = this.typeFilter.value.type;
     this.typeForm = this.formBuilder.group({
-      type: [this.typeInput, [Validators.required]],
+      type: [typeInput, [Validators.required]],
     });
   }
 
   apply() {
     const type = this.typeForm.get('type')?.value;
-    this.applyEvent.emit({ type });
+    this.applyEvent.emit({ type: this.typeFilter.type, value: { type } });
   }
 }

@@ -1,6 +1,6 @@
 <form [formGroup]="userForm" (ngSubmit)="apply()">
     <dsfr-form-fieldset>
-        <p class="fr-mb-2v">Indiquer le prénom des utilisateurs concernés par les transactions que vous voulez observer</p>
+        <p *fieldsetElement class="fr-mb-2v">Indiquer le prénom des utilisateurs concernés par les transactions que vous voulez observer</p>
       <dsfr-form-input *fieldsetElement formControlName="first" label="Prénom" />
         <dsfr-buttons-group *fieldsetElement>
           <dsfr-button type="submit" label="Appliquer" class="dsfr-button fr-mt-4v" variant="primary" ariaLabel="Appliquer" [disabled]="userForm.invalid" ariaControls="filterModal"></dsfr-button>

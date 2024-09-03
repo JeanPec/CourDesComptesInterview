@@ -1,10 +1,10 @@
-<div class="fr-grid-row">
-    <div class="fr-col-4">
-        <dsfr-button label="Filtre" ariaControls="filterModal"></dsfr-button>
+<div class="fr-grid-row fr-mb-2v">
+    <div class="fr-col-1">
+        <dsfr-button label="Filtrez" ariaControls="filterModal"></dsfr-button>
     </div>
-    <div class="fr-col-8">
-        <div>hello</div>
-    </div>
+    <dsfr-tags-group class="fr-col-11">
+        <dsfr-tag *ngFor="let item of activeFilters | keyvalue" [label]="item.value | filterNames" [mode]="'deletable'"  (tagSelect)="handleFilterDelete(item.key)" />
+    </dsfr-tags-group>
 </div>
 <dsfr-modal dialogId="filterModal" titleModal="Filtre" [autoCloseOnAction]="false">
     <div class="fr-grid-row">
@@ -23,12 +23,12 @@
                 </li>
             </ul>
         </nav>
-        <div class="fr-col-8 fr-pl-2v">
-            <app-type-filtre *ngIf="showFilter === 'type'"/>
-            <app-user-filtre *ngIf="showFilter === 'benefactor'" nameInput/>
-            <app-user-filtre *ngIf="showFilter === 'creditor'"/>
-            <app-amount-filtre *ngIf="showFilter === 'amount'"/>
-            <app-date-filtre *ngIf="showFilter === 'date'"/>
+        <div class="fr-col-8 fr-pl-4v">
+            <app-type-filtre *ngIf="showFilter === 'type'" [typeFilter]="activeFilters.get('type') ?? {type: 'type', value: {}}" (applyEvent)="handleFilterUpdate($event)"/>
+            <app-user-filtre *ngIf="showFilter === 'benefactor'" [userFilter]="activeFilters.get('benefactor') ?? {type: 'benefactor', value: {}}" (applyEvent)="handleFilterUpdate($event)"/>
+            <app-user-filtre *ngIf="showFilter === 'creditor'" [userFilter]="activeFilters.get('creditor') ?? {type: 'creditor', value: {}}" (applyEvent)="handleFilterUpdate($event)"/>
+            <app-amount-filtre *ngIf="showFilter === 'amount'" [amountFilter]="activeFilters.get('amount') ?? {type: 'amount', value: {}}" (applyEvent)="handleFilterUpdate($event)"/>
+            <app-date-filtre *ngIf="showFilter === 'date'" [dateFilter]="activeFilters.get('date') ?? {type: 'date', value: {}}" (applyEvent)="handleFilterUpdate($event)"/>
         </div>
     </div>
 </dsfr-modal>

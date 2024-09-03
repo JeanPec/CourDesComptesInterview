@@ -10,7 +10,10 @@ import { TransactionsService } from '@app/services/transactions.service';
 export class UserComponent {
   user: UserInfo | undefined;
   userSum: number = 0;
-  constructor(private service: AuthService, private transactions: TransactionsService) {}
+  String: any;
+  constructor(private service: AuthService, private transactions: TransactionsService) {
+    this.String = String;
+  }
 
   async ngOnInit() {
     this.user = this.service.WhoAmI();

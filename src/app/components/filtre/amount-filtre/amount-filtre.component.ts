@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertService } from '@app/services/alert.service';
+import { FilterInput } from '../filtre.component';
 
 @Component({
   selector: 'app-amount-filtre',
@@ -8,8 +9,7 @@ import { AlertService } from '@app/services/alert.service';
   styleUrls: ['./amount-filtre.component.scss'],
 })
 export class AmountFiltreComponent {
-  @Input() lowerAmount: number | undefined = undefined;
-  @Input() upperAmount: number | undefined = undefined;
+  @Input() amountFilter: FilterInput = { type: 'amount', value: {} };
   @Output() applyEvent = new EventEmitter<any>();
   amountForm!: FormGroup;
 
@@ -23,9 +23,10 @@ export class AmountFiltreComponent {
   }
 
   initForm() {
+    const value = this.amountFilter.value;
     this.amountForm = this.formBuilder.group({
-      lowerAmount: [this.lowerAmount, [Validators.required, Validators.min(0)]],
-      upperAmount: [this.upperAmount, [Validators.required, Validators.min(0)]],
+      lowerAmount: [value.lowerAmount ?? 0, [Validators.required, Validators.min(0)]],
+      upperAmount: [value.upperAmount ?? 50000, [Validators.required, Validators.min(0)]],
     });
   }
 
@@ -40,6 +41,6 @@ export class AmountFiltreComponent {
       );
       return;
     }
-    this.applyEvent.emit({ lowerAmount, upperAmount });
+    this.applyEvent.emit({type: this.amountFilter.type, value: { lowerAmount, upperAmount }});
   }
 }

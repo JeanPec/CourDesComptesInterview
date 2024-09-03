@@ -6,6 +6,7 @@ import {
   TransactionsService,
 } from '@app/services/transactions.service';
 import { UsersService } from '@app/services/users.service';
+import { FilterInput } from '../filtre/filtre.component';
 
 const HEADER = [
   { key: 'type', text: 'Type' },
@@ -31,6 +32,8 @@ export class TransactionsTableComponent {
   firstPage = true;
   lastPage = false;
   activeSort: Sort = { key: 'date', order: Direction.ASC };
+  activeFilters: FilterInput[] = [];
+  loading = true;
 
   constructor(
     private transactionsService: TransactionsService,
@@ -47,10 +50,16 @@ export class TransactionsTableComponent {
         date,
       }),
     );
+    this.loading = false;
   }
 
   ngOnInit() {
     this.getUserTransactions();
+  }
+
+  handleFilterUpdate(filters: FilterInput[]) {
+    this.activeFilters = filters;
+    this.getUserTransactions(true);
   }
 
   handleSort(header: string) {
@@ -68,7 +77,7 @@ export class TransactionsTableComponent {
       };
     }
 
-    this.getUserTransactions();
+    this.getUserTransactions(true);
   }
 
   private checkPageChange() {
@@ -89,12 +98,14 @@ export class TransactionsTableComponent {
     this.getUserTransactions();
   }
 
-  async getUserTransactions() {
+  async getUserTransactions(forceUpdate = false) {
     const data = await this.transactionsService.getUserTransactions(
       this.userId,
       this.currentPage,
       this.pageDisplay,
       this.activeSort,
+      this.activeFilters,
+      forceUpdate
     );
     this.totalItems = data.total;
     this.formatDataToTable(data.table);

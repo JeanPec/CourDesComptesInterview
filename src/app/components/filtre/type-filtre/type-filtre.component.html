@@ -1,8 +1,7 @@
 <form [formGroup]="typeForm" (ngSubmit)="apply()">
     <dsfr-form-fieldset>
-        <p class="fr-mb-2v">Indiquer le type des transactions que vous voulez observer</p>
         <dsfr-form-radio *fieldsetElement formControlName="type" [name]="'type'" [inline]="false"
-            [required]="true" [legendRegular]="false" [legend]="'Sélectionnez Crédit ou Débit'"
+            [required]="true" [legendRegular]="true" [legend]="'Sélectionnez Crédit ou Débit'"
             [options]="[{label: 'Crédit', value: 'credit'}, {label: 'Débit', value: 'debit'}]" [small]="false"></dsfr-form-radio>
         <dsfr-buttons-group *fieldsetElement>
             <dsfr-button type="submit" label="Appliquer" class="dsfr-button fr-mt-4v" variant="primary"

@@ -1,10 +1,10 @@
-<div class="fr-table--sm fr-table" id="transaction-table">
+<div class="fr-table--sm fr-table" id="transaction-table"  *ngIf="!loading">
     <div class="fr-table__wrapper">
         <div class="fr-table__container">
             <div class="fr-table__content">
                 <table id="table-sm">
                     <caption> Tableau de Transactions </caption>
-                    <app-filtre />
+                    <app-filtre (applyFilter)="handleFilterUpdate($event)" />
                     <thead>
                         <tr>
                             <th *ngFor="let header of dataHeader" scope="col" (click)="handleSort(header.key)">
@@ -15,14 +15,14 @@
                                             aria-hidden="true"></span></ng-template></span></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody >
                         <tr *ngFor="let row of dataRows; let i = index" [id]="'table-md-row-key-' + i">
                             <td><dsfr-badge [label]="row.isDebit ? 'Débit' : 'Crédit'" [noIcon]="true" [size]="'MD'"
                                     [severity]="row.isDebit ? 'success' : 'error'"></dsfr-badge></td>
-                                    <td>{{row.toUser | userDisplay}}</td>
+                            <td>{{row.toUser | userDisplay}}</td>
                             <td>{{row.fromUser | userDisplay}}</td>
                             <td><app-price [price]="row.amount" /></td>
-                            <td><app-date [date]="row.date" /></td>
+                            <td>{{row.date | date}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -30,6 +30,7 @@
         </div>
     </div>
 </div>
+<app-loading *ngIf="loading" height="400px" width="100%"/>
 <div *ngIf="showPagination" class="fr-pagination" aria-label="Pagination">
     <ul class="fr-pagination__list">
         <li>
