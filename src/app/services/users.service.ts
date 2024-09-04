@@ -18,7 +18,7 @@ export interface User {
 })
 export class UsersService {
   userURl = ENVIRONNEMENT.baseUrl + ENVIRONNEMENT.urls.users;
-  users: Map<number, User> = new Map();
+  private users: Map<number, User> = new Map();
 
   constructor(
     private http: HttpClient,
@@ -52,5 +52,10 @@ export class UsersService {
       initial_balance: 5,
     }
     return this.users.get(userId) ?? unknowUser;
+  }
+
+  getUserIdFromEmail(userEmail: string): User | undefined {
+    const users = Array.from(this.users.values());
+    return users.find((user) => user.email === userEmail);
   }
 }

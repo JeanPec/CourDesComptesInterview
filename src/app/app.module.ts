@@ -45,6 +45,8 @@ import { UserComponent } from './user/user.component';
 import { FilterNamesPipe } from './pipes/filter-names.pipe';
 import { DatePipe } from './pipes/date.pipe';
 import { LoadingComponent } from './components/loading/loading.component';
+import { NewTransactionComponent } from './new-transaction/new-transaction.component';
+import { PricePipe } from './pipes/price.pipe';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     FilterNamesPipe,
     DatePipe,
     LoadingComponent,
+    NewTransactionComponent,
+    PricePipe,
   ],
   imports: [
     BrowserModule,

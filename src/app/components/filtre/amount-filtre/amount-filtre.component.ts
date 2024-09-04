@@ -25,14 +25,14 @@ export class AmountFiltreComponent {
   initForm() {
     const value = this.amountFilter.value;
     this.amountForm = this.formBuilder.group({
-      lowerAmount: [value.lowerAmount ?? 0, [Validators.required, Validators.min(0)]],
-      upperAmount: [value.upperAmount ?? 50000, [Validators.required, Validators.min(0)]],
+      lowerAmount: [value.lowerAmount ?? 0, [Validators.required, Validators.min(0), Validators.pattern('[0-9]*,[0-9]{0,2}')]],
+      upperAmount: [value.upperAmount ?? 50000, [Validators.required, Validators.min(0), Validators.pattern('[0-9]*,[0-9]{0,2}')]],
     });
   }
 
   apply() {
-    const lowerAmount = this.amountForm.get('lowerAmount')?.value;
-    const upperAmount = this.amountForm.get('upperAmount')?.value;
+    const lowerAmount = this.amountForm.get('lowerAmount')?.value * 100;
+    const upperAmount = this.amountForm.get('upperAmount')?.value * 100;
     if (upperAmount < lowerAmount) {
       this.alertService.showAlert(
         'Erreur date',

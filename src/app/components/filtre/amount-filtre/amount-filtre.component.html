@@ -2,13 +2,13 @@
     <dsfr-form-fieldset>
             <p *fieldsetElement class="fr-mb-2v">Indiquer la fourchette de solde des transactions que vous voulez
                 observer</p>
-            <dsfr-form-input *fieldsetElement formControlName="lowerAmount" [type]="'number'" [label]="'Prix minimum'"
+            <dsfr-form-input *fieldsetElement formControlName="lowerAmount" [type]="'number'" [label]="'Prix minimum (€)'"
                 [required]="true" [inputWrapMode]="'action'"></dsfr-form-input>
-            <dsfr-form-input *fieldsetElement formControlName="upperAmount" [type]="'number'" [label]="'Prix maximum'"
-                [required]="true" [pattern]="'[0-9]*'" [type]="'number'"></dsfr-form-input>
+            <dsfr-form-input *fieldsetElement formControlName="upperAmount" [type]="'number'" [label]="'Prix maximum (€)'"
+                [required]="true" [type]="'number'"></dsfr-form-input>
 
         <dsfr-buttons-group *fieldsetElement>
             <dsfr-button type="submit" label="Appliquer" class="dsfr-button fr-mt-4v" variant="primary"
-                ariaLabel="Appliquer" [disabled]="amountForm.invalid" ariaControls="filterModal"></dsfr-button>
+                ariaLabel="Appliquer" [disabled]="amountForm.invalid || !amountForm.dirty" ariaControls="filterModal"></dsfr-button>
         </dsfr-buttons-group>
     </dsfr-form-fieldset>

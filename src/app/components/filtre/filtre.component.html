@@ -1,9 +1,9 @@
 <div class="fr-grid-row fr-mb-2v">
-    <div class="fr-col-1">
+    <div class="fr-col-2">
         <dsfr-button label="Filtrez" ariaControls="filterModal"></dsfr-button>
     </div>
-    <dsfr-tags-group class="fr-col-11">
-        <dsfr-tag *ngFor="let item of activeFilters | keyvalue" [label]="item.value | filterNames" [mode]="'deletable'"  (tagSelect)="handleFilterDelete(item.key)" />
+    <dsfr-tags-group class="fr-col-10">
+        <dsfr-tag *ngFor="let item of activeFilters | keyvalue" [label]="item.value | filterNames" [mode]="'deletable'" (tagSelect)="handleFilterDelete(item.key)" />
     </dsfr-tags-group>
 </div>
 <dsfr-modal dialogId="filterModal" titleModal="Filtre" [autoCloseOnAction]="false">

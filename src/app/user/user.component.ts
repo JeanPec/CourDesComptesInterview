@@ -11,15 +11,15 @@ export class UserComponent {
   user: UserInfo | undefined;
   userSum: number = 0;
   String: any;
-  constructor(private service: AuthService, private transactions: TransactionsService) {
+  constructor(private authService: AuthService, private transactions: TransactionsService) {
     this.String = String;
   }
 
   async ngOnInit() {
-    this.user = this.service.WhoAmI();
+    this.user = this.authService.WhoAmI();
     this.userSum = await this.transactions.updatedSum(this.user.id, this.user.initial_balance);
   }
 
   linkSelect() {
-    this.service.Logout();
+    this.authService.Logout();
   }}

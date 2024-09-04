@@ -1,0 +1,27 @@
+<main>
+    <div class="fr-container fr-py-12v">
+        <div class="fr-grid-row fr-grid-row--gutters">
+            <section *ngIf="user" class="fr-mb-8v">
+                <h2>Nouvelle Transaction</h2>
+                <form [formGroup]="newTransactionForm" (ngSubmit)="submit()">
+                    <dsfr-form-fieldset>
+                        <dsfr-form-input *fieldsetElement formControlName="email" label="Email" type="email"></dsfr-form-input>
+                        <dsfr-form-input *fieldsetElement formControlName="amount" [type]="'number'"
+                            [label]="'Montant de la transaction (€)'" [required]="true"
+                            [type]="'number'"></dsfr-form-input>
+                        <dsfr-buttons-group *fieldsetElement>
+                            <dsfr-button type="submit" label="Appliquer" class="dsfr-button fr-mt-4v" variant="primary"
+                                ariaLabel="Soumettre" [disabled]="newTransactionForm.invalid"
+                                ariaControls="filterModal"></dsfr-button>
+                        </dsfr-buttons-group>
+                    </dsfr-form-fieldset>
+                </form>
+            </section>
+        </div>
+    </div>
+</main>
+<dsfr-modal #confirmationModal controlMode="dynamic" titleModal="Confirmation" [actions]="actions">
+    <p>
+      Veuillez confirmez le transaction de {{ amountToConfirm | price}} destiné à {{emailToConfirm}}
+    </p>
+  </dsfr-modal>

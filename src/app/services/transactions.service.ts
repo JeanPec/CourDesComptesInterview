@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FilterInput } from '@app/components/filtre/filtre.component';
 import { ENVIRONNEMENT } from '@environments/environment';
+import { Observable } from 'rxjs';
 import { AlertService } from './alert.service';
 import { UsersService } from './users.service';
 
@@ -105,8 +106,8 @@ export class TransactionsService {
       }
       case 'creditor': {
         const { first } = this.userService.getUserFromId(element.fromUserId);
-        const firstName = value.first;
-        return first === firstName;
+        const firstName = String(value.first);
+        return firstName.includes(first);
       }
       case 'benefactor': {
         const { first } = this.userService.getUserFromId(element.toUserId);
@@ -227,5 +228,18 @@ export class TransactionsService {
           baseSum,
         )
       : 0;
+  }
+
+  submitTransaction(
+    sendId: number,
+    amount: number,
+    receiverId: number,
+  ): Observable<Object> {
+    const data = {
+      fromUserId: sendId,
+      toUserId: receiverId,
+      amount,
+    };
+    return this.http.post(this.transactionURL, data);
   }
 }
