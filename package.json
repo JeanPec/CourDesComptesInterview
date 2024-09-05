@@ -10,7 +10,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "api": "json-server db.json -m ./node_modules/json-server-auth -r routes.json",
     "start": "concurrently \"npm run api\" \"npm run serve\""
   },
