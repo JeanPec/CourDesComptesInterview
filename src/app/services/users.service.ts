@@ -27,7 +27,7 @@ export class UsersService {
         });
       },
       error: (error) => {
-        this.alertService.showAlert('User Error', error);
+        this.alertService.showAlert('User Error', error.error);
       },
     });
   }

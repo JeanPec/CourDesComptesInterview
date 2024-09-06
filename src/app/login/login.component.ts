@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PASSWORD } from '@app/core/constants/apps';
-import { AlertService } from '@app/services/alert.service';
+import { AlertPayload, AlertService } from '@app/services/alert.service';
 import { AuthService } from '@app/services/auth.service';
 import { DsfrLoginComponent } from '@edugouvfr/ngx-dsfr/lib/pages/login';
 
@@ -13,6 +13,7 @@ import { DsfrLoginComponent } from '@edugouvfr/ngx-dsfr/lib/pages/login';
 })
 export class LoginComponent {
   signInForm!: FormGroup;
+  alert : AlertPayload | null = null;
 
   readonly userPassword = PASSWORD;
 
@@ -50,7 +51,7 @@ export class LoginComponent {
           this.router.navigate(['/user']);
         },
         (error) => {
-          this.alertService.showAlert('Error', error.error, 'error');
+          this.alert = { heading: "Error", message: error.error, severity: 'error', closeControlLabel: 'Fermez'};
         },
       );
   }

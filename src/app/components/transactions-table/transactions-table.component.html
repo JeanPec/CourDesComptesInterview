@@ -24,7 +24,7 @@
                                     [severity]="row.isDebit ? 'success' : 'error'"></dsfr-badge></td>
                             <td>{{row.toUser | userDisplay}}</td>
                             <td>{{row.fromUser | userDisplay}}</td>
-                            <td><app-price [price]="row.amount" /></td>
+                            <td>{{row.amount | price}}</td>
                             <td>{{row.date | date}}</td>
                         </tr>
                     </tbody>

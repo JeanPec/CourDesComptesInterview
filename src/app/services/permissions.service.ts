@@ -5,14 +5,14 @@ import {
   Router,
   RouterStateSnapshot,
 } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class PermissionsService {
-  constructor(private cookieService: CookieService, public router: Router) {}
+  constructor(private authService: AuthService, public router: Router) {}
 
   canActivate(): boolean {
-    if (this.cookieService.check('userToken')) {
+    if (this.authService.getAuthorizationToken() !== undefined) {
       return true
     } else {
       this.router.navigate(['/login']);

@@ -29,8 +29,6 @@ import { AmountFiltreComponent } from './components/filtre/amount-filtre/amount-
 import { DateFiltreComponent } from './components/filtre/date-filtre/date-filtre.component';
 import { FiltreComponent } from './components/filtre/filtre.component';
 import { TypeFiltreComponent } from './components/filtre/type-filtre/type-filtre.component';
-import { UserFiltreComponent } from './components/filtre/user-filtre/user-filtre.component';
-import { PriceComponent } from './components/price/price.component';
 import { TransactionsTableComponent } from './components/transactions-table/transactions-table.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
@@ -47,6 +45,7 @@ import { DatePipe } from './pipes/date.pipe';
 import { LoadingComponent } from './components/loading/loading.component';
 import { NewTransactionComponent } from './new-transaction/new-transaction.component';
 import { PricePipe } from './pipes/price.pipe';
+import { UserFiltreComponent } from './components/filtre/user-filtre/user-filtre.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +56,6 @@ import { PricePipe } from './pipes/price.pipe';
     LoginComponent,
     PrivateLayoutComponent,
     HeaderComponent,
-    PriceComponent,
     TransactionsTableComponent,
     UserDisplayPipe,
     FiltreComponent,

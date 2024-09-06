@@ -32,7 +32,6 @@ export class NewTransactionComponent {
   async ngOnInit(): Promise<void> {
     this.initForm();
     this.user = this.authService.WhoAmI();
-    console.log('user', this.user);
     this.userAmount = await this.transactionsService.updatedSum(
       this.user.id,
       this.user.initial_balance,
@@ -41,6 +40,7 @@ export class NewTransactionComponent {
       {
         label: 'Confirmez',
         icon: 'fr-icon-checkbox-circle-line',
+        // bind the context so that we can access to the info of the main class
         callback: this.handleModelAction.bind(this),
       },
     ];
@@ -54,9 +54,7 @@ export class NewTransactionComponent {
   }
 
   handleModelAction() {
-    console.log(this);
     if (this.user) {
-      console.log('Maxi Prout');
       this.transactionsService
         .submitTransaction(
           this.user.id,
@@ -75,7 +73,7 @@ export class NewTransactionComponent {
           error: (error) => {
             this.alertService.showAlert(
               'Erreur Appel Transaction',
-              'Une erreur réseau est arrivé' + error,
+              'Une erreur réseau est arrivé' + error.error,
               'error',
             );
           },

@@ -38,6 +38,7 @@ export class TransactionsService {
     private userService: UsersService,
   ) {}
 
+  // First we filter if needed one filter at a time the fetched data and then we order it if needed
   fetchTransactions(userId: number, filters: FilterInput[], newSort?: Sort) {
     return new Promise<void>((resolve, reject) => {
       this.http.get(this.transactionURL).subscribe({
@@ -80,7 +81,7 @@ export class TransactionsService {
           resolve();
         },
         error: (error) => {
-          this.alertService.showAlert('Transaction Error', error);
+          this.alertService.showAlert('Transaction Error', error.error);
           reject(error);
         },
       });
@@ -188,6 +189,8 @@ export class TransactionsService {
     return a - b;
   }
 
+  //once the data is fetched, filtered and sorted we paginate it
+  //forceUpdate is used to make sure we only update when we want it and avoid unecessary fetching
   async getUserTransactions(
     userId: number,
     pageNumber: number,
@@ -215,6 +218,7 @@ export class TransactionsService {
     };
   }
 
+  // fetch the transactions and update the sum if it concerns him/her
   async updatedSum(userId: number, baseSum: number) {
     if (!this.transactions) await this.fetchTransactions(userId, []);
     return this.transactions

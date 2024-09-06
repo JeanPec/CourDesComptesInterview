@@ -8,6 +8,7 @@ import { DateFormatService } from '@app/services/date-format.service';
 export class FilterNamesPipe implements PipeTransform {
   constructor(private dateService: DateFormatService) {}
 
+  //Names used for the filter Tags
   transform(input: FilterInput): string {
     const value = input.value;
     switch (input.type) {

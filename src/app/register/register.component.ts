@@ -71,12 +71,12 @@ export class RegisterComponent {
           this.router.navigate(['/user']);
         },
         (error) => {
-          this.alertService.showAlert("Error", error.error, 'error');
+          this.alert = { heading: "Error", message: error.error, severity: 'error', closeControlLabel: 'Fermez'};
         },
       );
   }
 
   navigateSignIn() {
-    this.router.navigate(['/register']);
+    this.router.navigate(['/login']);
   }
 }

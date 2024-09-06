@@ -13,7 +13,7 @@
       "id": 2,
       "first": "Herminia",
       "last": "Orn",
-      "email": "Herminia.Orn@johnnie.info",
+      "email": "herminia.orn@johnnie.info",
       "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "October 3, 2016",
       "initial_balance": "913893"
@@ -22,7 +22,7 @@
       "id": 3,
       "first": "Johnnie",
       "last": "Block",
-      "email": "Johnnie.Block@luther.net",
+      "email": "johnnie.block@luther.net",
       "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "March 21, 2021",
       "initial_balance": "576597"
@@ -31,7 +31,7 @@
       "id": 4,
       "first": "Romaine",
       "last": "Crist",
-      "email": "Romaine.Crist@paige.net",
+      "email": "romaine.crist@paige.net",
       "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "June 9, 2015",
       "initial_balance": "111166"
@@ -40,7 +40,7 @@
       "id": 5,
       "first": "Demario",
       "last": "Purdy",
-      "email": "Demario.Purdy@christiana.biz",
+      "email": "demario.purdy@christiana.biz",
       "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "April 20, 2017",
       "initial_balance": "58862"
@@ -58,7 +58,7 @@
       "id": 7,
       "first": "Ofelia",
       "last": "Eichmann",
-      "email": "Ofelia.Eichmann@colt.biz",
+      "email": "ofelia.eichmann@colt.biz",
       "password": "$2a$10$w3MBOHCXaX1mBJO4vw5ewuFMKikKWVba7yKmy767LnnxvXB/.BGR2",
       "created": "December 1, 2015",
       "initial_balance": "868512"

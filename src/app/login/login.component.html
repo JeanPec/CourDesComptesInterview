@@ -7,6 +7,8 @@
             <h1 class="fr-col-12">
               Se connecter avec son compte
             </h1>
+            <dsfr-alert *ngIf="alert" [heading]="alert.heading" [message]="alert.message" [severity]="alert.severity" [closeControlLabel]="alert.closeControlLabel" [headingLevel]="'H3'" [ariaRoleValue]="'alert'" [size]="'MD'" [closeable]="true" >
+            </dsfr-alert>
             <form [formGroup]="signInForm" (ngSubmit)="signIn()">
               <dsfr-form-fieldset>
                 <dsfr-form-email *fieldsetElement formControlName="email" label="Email" type="email" />

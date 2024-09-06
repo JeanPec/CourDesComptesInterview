@@ -62,6 +62,9 @@ export class TransactionsTableComponent {
     this.getUserTransactions(true);
   }
 
+  // gets called when an use click on a header cell
+  // if it is a new sort we update the type and put the default order Direction.ASC
+  // if it is already clicked we update to the opposite order
   handleSort(header: string) {
     this.currentPage = 0;
     this.checkPageChange();

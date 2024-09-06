@@ -6,6 +6,9 @@ import { FilterInput, FilterKey } from '@app/core/types/filter';
   templateUrl: './filtre.component.html',
   styleUrls: ['./filtre.component.scss'],
 })
+// Main Filter Modal
+//The Side Menu is used to navigate between the filters 
+//Dsiplay the active filter in a Tag group
 export class FiltreComponent {
   activeFilters: Map<FilterKey, FilterInput> = new Map();
   showFilter: FilterKey = 'type';
