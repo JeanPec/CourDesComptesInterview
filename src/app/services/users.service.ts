@@ -2,16 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ENVIRONNEMENT } from '@environments/environment';
 import { AlertService } from './alert.service';
-import { first } from 'rxjs';
-
-export interface User {
-  id: number;
-  first: string;
-  last: string;
-  email: string;
-  created: Date;
-  initial_balance: number;
-}
+import { User } from '@app/core/types/User';
 
 @Injectable({
   providedIn: 'root',
@@ -27,19 +18,18 @@ export class UsersService {
     this.getUsers();
   }
 
-
   getUsers() {
-      this.http.get(this.userURl).subscribe({
-        next: (returnValue: any) => {
-          const users = returnValue as User[];
-          users.map((user) => {
-            this.users.set(user.id, user);
-          });
-        },
-        error: (error) => {
-          this.alertService.showAlert('User Error', error);
-        },
-      });
+    this.http.get(this.userURl).subscribe({
+      next: (returnValue: any) => {
+        const users = returnValue as User[];
+        users.map((user) => {
+          this.users.set(user.id, user);
+        });
+      },
+      error: (error) => {
+        this.alertService.showAlert('User Error', error);
+      },
+    });
   }
 
   getUserFromId(userId: number): User {
@@ -50,7 +40,7 @@ export class UsersService {
       email: 'johnDoe@yahoo.fr',
       created: new Date(),
       initial_balance: 5,
-    }
+    };
     return this.users.get(userId) ?? unknowUser;
   }
 

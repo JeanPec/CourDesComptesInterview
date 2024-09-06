@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { FilterInput } from '@app/components/filtre/filtre.component';
+import { FilterInput } from '@app/core/types/filter';
 import { DateFormatService } from '@app/services/date-format.service';
 
 @Pipe({

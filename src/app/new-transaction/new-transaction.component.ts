@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AlertService } from '@app/services/alert.service';
+import { AlertPayload, AlertService } from '@app/services/alert.service';
 import { AuthService, UserInfo } from '@app/services/auth.service';
 import { TransactionsService } from '@app/services/transactions.service';
 import { UsersService } from '@app/services/users.service';
@@ -20,6 +20,7 @@ export class NewTransactionComponent {
   emailToConfirm: string = '';
   receiverIdToConfirm: number = 0;
   actions: any[] = [];
+  alert: AlertPayload | null = null;
 
   constructor(
     private alertService: AlertService,
@@ -31,7 +32,7 @@ export class NewTransactionComponent {
   async ngOnInit(): Promise<void> {
     this.initForm();
     this.user = this.authService.WhoAmI();
-    console.log('user', this.user)
+    console.log('user', this.user);
     this.userAmount = await this.transactionsService.updatedSum(
       this.user.id,
       this.user.initial_balance,
@@ -48,20 +49,14 @@ export class NewTransactionComponent {
   initForm() {
     this.newTransactionForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      amount: [
-        0,
-        [
-          Validators.required,
-          Validators.min(0),
-        ],
-      ],
+      amount: [0, [Validators.required, Validators.min(0)]],
     });
   }
 
   handleModelAction() {
-    console.log(this)
+    console.log(this);
     if (this.user) {
-      console.log('Maxi Prout')
+      console.log('Maxi Prout');
       this.transactionsService
         .submitTransaction(
           this.user.id,
@@ -88,26 +83,33 @@ export class NewTransactionComponent {
     }
   }
 
+  closeAlert() {
+    this.alert = null;
+  }
+
   submit() {
     const email = this.newTransactionForm.get('email')?.value;
     const amount = this.newTransactionForm.get('amount')?.value * 100;
 
-    if(amount > this.userAmount) {
-      this.alertService.showAlert(
-        'Solde insuffisante',
-        "Solde insuffisante pour le transfert",
-        'warning',
-      );
+    if (amount > this.userAmount) {
+      this.alert = {
+        heading: 'Solde insuffisante',
+        message: 'Solde insuffisante pour le transfert',
+        severity: 'warning',
+        closeControlLabel: 'Fermez',
+      };
       return;
     }
 
     const receiver = this.usersService.getUserIdFromEmail(email);
     if (receiver === undefined) {
-      this.alertService.showAlert(
-        'Erreur email',
-        "L'email rentré n'existe pas veuillez en sélectionner un autre",
-        'error',
-      );
+      this.alert = {
+        heading: 'Erreur email',
+        message:
+          "L'email rentré n'existe pas veuillez en sélectionner un autre",
+        severity: 'error',
+        closeControlLabel: 'Fermez',
+      };
       return;
     }
     this.emailToConfirm = email;

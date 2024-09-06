@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FilterInput } from '@app/core/types/filter';
 import {
   Direction,
   Sort,
@@ -6,7 +7,6 @@ import {
   TransactionsService,
 } from '@app/services/transactions.service';
 import { UsersService } from '@app/services/users.service';
-import { FilterInput } from '../filtre/filtre.component';
 
 const HEADER = [
   { key: 'type', text: 'Type' },

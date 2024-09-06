@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FilterInput } from '@app/core/types/filter';
 import { AlertService } from '@app/services/alert.service';
-import { FilterInput } from '../filtre.component';
 
 @Component({
   selector: 'app-date-filtre',

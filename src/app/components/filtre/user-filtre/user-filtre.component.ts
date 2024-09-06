@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FilterInput } from '../filtre.component';
+import { FilterInput } from '@app/core/types/filter';
 
 @Component({
   selector: 'app-user-filtre',

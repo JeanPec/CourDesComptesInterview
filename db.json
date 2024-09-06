@@ -809,6 +809,12 @@
       "toUserId": 5,
       "amount": 26184,
       "date": "2024-08-02T19:10:51Z"
+    },
+    {
+      "fromUserId": 1,
+      "toUserId": 2,
+      "amount": 500,
+      "id": 101
     }
   ]
 }

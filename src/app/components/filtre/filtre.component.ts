@@ -1,11 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-
-export type FilterKey = 'type' | 'amount' | 'creditor' | 'benefactor' | 'date';
-
-export interface FilterInput {
-  type: FilterKey,
-  value: any,
-}
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FilterInput, FilterKey } from '@app/core/types/filter';
 
 @Component({
   selector: 'app-filtre',
@@ -20,16 +14,18 @@ export class FiltreComponent {
 
   constructor() {
     this.Object = Object;
-}
+  }
 
   emitNewFilter() {
-    this.applyFilter.emit(Array.from(this.activeFilters, ([_, value]) => (value)) ?? []);
+    this.applyFilter.emit(
+      Array.from(this.activeFilters, ([_, value]) => value) ?? [],
+    );
   }
 
   handleFilterDelete(type: FilterKey) {
     this.activeFilters.delete(type);
     this.emitNewFilter();
-  };
+  }
 
   handleFilterUpdate(newFilter: FilterInput) {
     const { type } = newFilter;

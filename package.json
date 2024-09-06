@@ -44,6 +44,7 @@
     "@angular/cli": "^16.2.14",
     "@angular/compiler-cli": "^16.2.12",
     "@angular/localize": "^16.2.12",
+    "@faker-js/faker": "^9.0.0",
     "@types/jasmine": "~4.3.0",
     "angular-cli-ghpages": "^2.0.1",
     "jasmine-core": "~4.6.0",

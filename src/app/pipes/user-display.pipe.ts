@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { User } from '@app/core/types/User';
 import { AuthService } from '@app/services/auth.service';
-import { User } from '@app/services/users.service';
 
 @Pipe({
   name: 'userDisplay',

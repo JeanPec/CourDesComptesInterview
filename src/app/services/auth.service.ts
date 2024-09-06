@@ -31,25 +31,25 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private cookieService: CookieService,
     private router: Router,
   ) {}
 
   //to add case where ther is no token redirect to error page
   getAuthorizationToken(): string | undefined {
-      if(!this.cookieService.check('userToken')) return undefined;
-      return JSON.parse(this.cookieService.get('userToken')).accessToken;
+    const token = sessionStorage.getItem('userToken');
+    if(!token) return undefined;
+    return JSON.parse(token).accessToken;
   }
 
   WhoAmI(): UserInfo {
-    return JSON.parse(this.cookieService.get('userToken')).user;
+    const token = sessionStorage.getItem('userToken');
+    if(!token) throw new Error('User is not logged');
+    return JSON.parse(token).user;
   }
 
   Logout() {
-    if(this.cookieService.check('userToken')) {
-      this.cookieService.delete('userToken');
-      this.router.navigate(['/login']);
-    }
+    sessionStorage.clear();
+    this.router.navigate(['/login']);
   }
 
   Login(inputdata: LoginValues) {
@@ -60,11 +60,8 @@ export class AuthService {
         })
         .subscribe({
           next: (returnValue: any) => {
-            this.cookieService.set(
-              'userToken',
-              JSON.stringify(returnValue),
-              new Date(Date.now() + TOKEN_DURATION),
-            );
+            sessionStorage.setItem('userToken', 
+              JSON.stringify(returnValue))
             resolve();
           },
           error: (error) => reject(error),
@@ -80,11 +77,8 @@ export class AuthService {
         })
         .subscribe({
           next: (returnValue: any) => {
-            this.cookieService.set(
-              'userToken',
-              JSON.stringify(returnValue),
-              new Date(Date.now() + TOKEN_DURATION),
-            );
+              sessionStorage.setItem('userToken', 
+              JSON.stringify(returnValue))
             resolve();
           },
           error: (error) => reject(error),

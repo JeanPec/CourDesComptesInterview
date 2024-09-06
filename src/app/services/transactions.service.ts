@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FilterInput } from '@app/components/filtre/filtre.component';
 import { ENVIRONNEMENT } from '@environments/environment';
 import { Observable } from 'rxjs';
 import { AlertService } from './alert.service';
 import { UsersService } from './users.service';
+import { FilterInput } from '@app/core/types/filter';
 
 export interface Transaction {
   id: number;
