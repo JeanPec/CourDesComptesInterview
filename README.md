@@ -67,6 +67,8 @@ Formats des données gérées par le service et ses API :
 
 ## Utilisation
 
+La commande `npm install` installe tout ce qui est nécessaire pour lancer l'applciation 
+
 La commande `npm run start` lance l'application.
 
 - Le client est disponible sur <http://localhost:4200/>
